@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C1EE50F1D4230610044B76F /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1EE50E1D4230610044B76F /* UIScrollViewExtension.swift */; };
 		6C51A9F81D3CC1F3006EF254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C51A9F71D3CC1F3006EF254 /* AppDelegate.swift */; };
 		6C51A9FA1D3CC1F3006EF254 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C51A9F91D3CC1F3006EF254 /* ViewController.swift */; };
 		6C51A9FD1D3CC1F3006EF254 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C51A9FB1D3CC1F3006EF254 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C1EE50E1D4230610044B76F /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
 		6C51A9F41D3CC1F3006EF254 /* LLRefrsh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLRefrsh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C51A9F71D3CC1F3006EF254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C51A9F91D3CC1F3006EF254 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				6C51AA181D3CC232006EF254 /* BaseRefreshHeader.swift */,
+				6C1EE50E1D4230610044B76F /* UIScrollViewExtension.swift */,
 			);
 			path = LLRefresh;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				6C51A9FA1D3CC1F3006EF254 /* ViewController.swift in Sources */,
 				6C51A9F81D3CC1F3006EF254 /* AppDelegate.swift in Sources */,
 				6C51AA191D3CC232006EF254 /* BaseRefreshHeader.swift in Sources */,
+				6C1EE50F1D4230610044B76F /* UIScrollViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +404,7 @@
 				6C51AA131D3CC1F3006EF254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C51AA141D3CC1F3006EF254 /* Build configuration list for PBXNativeTarget "LLRefrshTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +413,7 @@
 				6C51AA161D3CC1F3006EF254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

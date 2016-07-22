@@ -15,7 +15,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         
         
-        let view = BaseRefreshHeader(frame: CGRectMake(0,-40 ,320,40))
+        let view = BaseRefreshHeader()
         view.backgroundColor = UIColor.brownColor()
         self.tableView.insertSubview(view, atIndex: 0)
 
