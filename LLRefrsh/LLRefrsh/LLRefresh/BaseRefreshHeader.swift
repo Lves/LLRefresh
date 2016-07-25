@@ -8,8 +8,26 @@
 
 import UIKit
 
+enum LLRefreshState {
+    case Nomal
+    case Pulling
+    case Refreshing
+    case WillRefresh
+    case NoMoreData
+}
+
 class BaseRefreshHeader: UIView {
-    
+    var panGesture:UIPanGestureRecognizer?
+    var _refreshState:LLRefreshState = .Nomal
+    var refreshState:LLRefreshState{
+        set{
+            _refreshState = newValue
+        }
+        get{
+            return _refreshState
+        }
+        
+    }
 
 
     var _scrollView:UIScrollView?
@@ -31,12 +49,18 @@ class BaseRefreshHeader: UIView {
         
         
         if let scrollView = newSuperview as? UIScrollView {
+            self.removeLLObservers()
+            
             _scrollView = scrollView
             scrollView.alwaysBounceVertical = true
             self.w = scrollView.w
             
             scrollView.addObserver(self, forKeyPath: "contentOffset", options: NSKeyValueObservingOptions.New, context: nil)
             scrollView.addObserver(self, forKeyPath: "contentOffset", options: NSKeyValueObservingOptions.Old, context: nil)
+            scrollView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.New, context: nil)
+            
+            self.panGesture = scrollView.panGestureRecognizer
+            self.panGesture?.addObserver(self, forKeyPath: "state", options: NSKeyValueObservingOptions.New, context: nil)
             
             
         }
@@ -47,15 +71,26 @@ class BaseRefreshHeader: UIView {
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         //        _scrollView!.mj_insetT = 40
+        print("Observer Path: \(keyPath)")
     }
     
     
     //MARK: private
+    
+    
     func buildUI(){
         self.autoresizingMask = .FlexibleWidth
         self.backgroundColor = UIColor.clearColor()
         self.h = 54
         self.y = -40
+        
+    }
+    
+    func removeLLObservers()  {
+        self.superview?.removeObserver(self, forKeyPath: "contentOffset")
+        self.superview?.removeObserver(self, forKeyPath: "contentSize")
+        self.panGesture?.removeObserver(self, forKeyPath: "state")
+        self.panGesture = nil
         
     }
 
