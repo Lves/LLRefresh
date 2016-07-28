@@ -9,14 +9,40 @@
 import UIKit
 
 class LLRefreshHeader: BaseRefreshHeader {
-    override var refreshState: LLRefreshState{
-        get{
-            return _refreshState
+    
+    var arrowView:UIImageView?
+    let lastUpdateTimeKey = "lastUpdateTimeKey"
+    
+  
+    
+    override func placeSubViews() {
+        super.placeSubViews()
+        
+        
+    }
+    
+    override func setState(refreshState: LLRefreshState) {
+        let oldState = _refreshState
+        if oldState == refreshState {
+            return
+        }else {
+            super.setState(refreshState)
         }
         
-        set{
-            _refreshState = newValue
+        if refreshState == LLRefreshState.Nomal{
+            if oldState != LLRefreshState.Refreshing {
+                return
+            }
+            NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: lastUpdateTimeKey)
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            
+        }else if refreshState == LLRefreshState.Refreshing {
+        
+            
         }
+        
+        
     }
 
   

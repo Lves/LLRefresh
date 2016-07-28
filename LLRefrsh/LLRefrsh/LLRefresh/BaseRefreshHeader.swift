@@ -19,16 +19,7 @@ enum LLRefreshState {
 class BaseRefreshHeader: UIView {
     var panGesture:UIPanGestureRecognizer?
     var _refreshState:LLRefreshState = .Nomal
-    var refreshState:LLRefreshState{
-        set{
-            _refreshState = newValue
-        }
-        get{
-            return _refreshState
-        }
-        
-    }
-
+    
 
     var _scrollView:UIScrollView?
     
@@ -38,6 +29,10 @@ class BaseRefreshHeader: UIView {
         
         buildUI()
         
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        placeSubViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -76,6 +71,15 @@ class BaseRefreshHeader: UIView {
     
     
     //MARK: private
+    func placeSubViews()  {
+    }
+    
+    func setState(refreshState:LLRefreshState){
+        _refreshState = refreshState
+        dispatch_async(dispatch_get_main_queue()) { 
+            self.setNeedsLayout()
+        }
+    }
     
     
     func buildUI(){
