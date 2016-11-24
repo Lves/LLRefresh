@@ -15,9 +15,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         
         
-        let view = BaseRefreshHeader()
+        let view = LLRefreshHeader()
         view.backgroundColor = UIColor.brownColor()
-        self.tableView.insertSubview(view, atIndex: 0)
+        self.tableView.ll_header = view
+        
+        self.tableView.ll_header?.beginRefreshing()
+        
+        dispatch_async(dispatch_get_global_queue(0, 0)) { 
+            sleep(3)
+            self.tableView.ll_header?.endRefreshing()
+        }
 
         
         
