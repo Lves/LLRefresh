@@ -38,11 +38,27 @@
                             <constraint firstItem="c1n-Ss-irr" firstAttribute="top" secondItem="qop-ER-x56" secondAttribute="bottom" id="dFK-00-jTv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="G7b-92-c3H"/>
                     <connections>
                         <outlet property="tableView" destination="qop-ER-x56" id="JaS-li-WxM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyz-z5-NLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2114.4000000000001" y="1050.224887556222"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9ad-DS-6JY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tcx-nr-bie" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l9q-nq-kxZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cLm-DE-NzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1175.2" y="1050.224887556222"/>
         </scene>

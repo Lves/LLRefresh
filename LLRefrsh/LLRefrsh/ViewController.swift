@@ -16,18 +16,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
         let view = LLRefreshHeader()
+        view.refreshingBlock = {[weak self] _ in
+             sleep(10)
+             self?.tableView.ll_header?.endRefreshing()
+        }
         view.backgroundColor = UIColor.brownColor()
         self.tableView.ll_header = view
         
         self.tableView.ll_header?.beginRefreshing()
-        
-        dispatch_async(dispatch_get_global_queue(0, 0)) { 
-            sleep(3)
-            self.tableView.ll_header?.endRefreshing()
-        }
 
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

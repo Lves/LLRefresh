@@ -20,11 +20,11 @@ class LLRefreshHeader: BaseRefreshHeader {
     
     
     override func setState(state:LLRefreshState) {
-        let oldValue = self.refreshState
+        let oldValue = refreshState
+        super.setState(state)
         guard state != oldValue else {
             return
         }
-        super.setState(state)
         
         if state == .Normal{
             if oldValue != LLRefreshState.Refreshing {
@@ -34,13 +34,16 @@ class LLRefreshHeader: BaseRefreshHeader {
             NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: lastUpdateTimeKey)
             NSUserDefaults.standardUserDefaults().synchronize()
             // 恢复inset和offset
+            
             UIView.animateWithDuration(0.4, animations: {
                 self._scrollView?.ll_insetT += self.insetTDelta
                 print("self._scrollView?.ll_insetT: \(self._scrollView?.ll_insetT)")
             }, completion: { (finished) in
                 self._pullingPercent = 0.0
+                if let endRefreshingCompletionBlock = self.endRefreshingCompletionBlock {
+                    endRefreshingCompletionBlock()
+                }
             })
-            
             
         }else if state == .Refreshing {
             dispatch_async(dispatch_get_main_queue(), {
@@ -49,16 +52,16 @@ class LLRefreshHeader: BaseRefreshHeader {
                     self._scrollView?.ll_insetT = top
                     self._scrollView?.setContentOffset(CGPointMake(0, -top), animated: false)
                 }, completion: { (finished) in
-                        
+                    self.executeRefreshingCallback()
                 })
             })
         }
-
+       
     }
     
     override func placeSubViews() {
         super.placeSubViews()
-        self.ll_y = -(ll_h + ignoredScrollViewContentInsetTop)
+        self.ll_y = -ll_h - ignoredScrollViewContentInsetTop
     }
     
     override func buildUI() {

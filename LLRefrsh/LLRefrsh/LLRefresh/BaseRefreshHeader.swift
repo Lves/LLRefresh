@@ -35,6 +35,11 @@ class BaseRefreshHeader: UIView {
     
     //父控件
     weak var _scrollView:UIScrollView?
+    
+    
+    var refreshingBlock:(()->())?
+    var beginRefreshingCompletionBlock:(()->())?
+    var endRefreshingCompletionBlock:(()->())?
 
     
     
@@ -42,7 +47,7 @@ class BaseRefreshHeader: UIView {
         super.init(frame: frame)
         
         buildUI()
-        refreshState = .Normal
+        self.setState(.Normal)
     }
     override func layoutSubviews() {
         placeSubViews()
@@ -63,9 +68,9 @@ class BaseRefreshHeader: UIView {
     override func willMoveToSuperview(newSuperview: UIView?) {
         super.willMoveToSuperview(newSuperview)
         
-        self.removeLLObservers()
+        
         if let scrollView = newSuperview as? UIScrollView {
-           
+            self.removeLLObservers()
             self.ll_w = scrollView.ll_w
             self.ll_x = 0
             
@@ -129,6 +134,17 @@ class BaseRefreshHeader: UIView {
     
     //MARK: - private
     func placeSubViews()  {
+    }
+    
+    func executeRefreshingCallback() {
+        dispatch_async(dispatch_get_main_queue(), {[weak self] _ in
+            if let refreshingBlock = self?.refreshingBlock {
+                refreshingBlock()
+            }
+            if let beginRefreshingCompletionBlock = self?.beginRefreshingCompletionBlock {
+                beginRefreshingCompletionBlock()
+            }
+        })
     }
     
     
