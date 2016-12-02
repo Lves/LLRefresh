@@ -100,7 +100,7 @@ class LLRefreshStateHeader: LLRefreshHeader {
             let dateForamt = NSDateFormatter()
             var isToday = false
             if cmp1?.day == cmp2?.day {  //today
-                dateForamt.dateFormat = "HH:mm"
+                dateForamt.dateFormat = " HH:mm"
                 isToday = true
             }else if cmp1?.year == cmp2?.year {  //today
                 dateForamt.dateFormat = "MM-dd HH:mm"
@@ -108,11 +108,14 @@ class LLRefreshStateHeader: LLRefreshHeader {
                 dateForamt.dateFormat = "yyyy-MM-dd HH:mm"
             }
             let time = dateForamt.stringFromDate(lastUpdateTime)
-            lastUpdatedTimeLabel.text = "\(time)"
+            
+            let str = isToday ? "今天" : ""
+            
+            lastUpdatedTimeLabel.text = "最后更新：\(str)\(time)"
             
             
         }else {     //第一次刷新
-            lastUpdatedTimeLabel.text = "首次更新"
+            lastUpdatedTimeLabel.text = "最后更新：无记录"
         }
         
         

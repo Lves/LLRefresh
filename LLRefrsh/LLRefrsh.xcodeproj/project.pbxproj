@@ -17,7 +17,7 @@
 		6C66921C1DF15D09008E2988 /* UIView+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66921B1DF15D09008E2988 /* UIView+LLExtension.swift */; };
 		6C66921E1DF15D5B008E2988 /* UIScrollView+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66921D1DF15D5B008E2988 /* UIScrollView+LLExtension.swift */; };
 		6C6692201DF15D96008E2988 /* LLBaseRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C66921F1DF15D96008E2988 /* LLBaseRefreshHeader.swift */; };
-		6C6692241DF1679D008E2988 /* LLRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6692231DF1679D008E2988 /* LLRefreshStateHeader.swift */; };
+		6C6692261DF18683008E2988 /* LLRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6692251DF18683008E2988 /* LLRefreshStateHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,7 @@
 		6C66921B1DF15D09008E2988 /* UIView+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LLExtension.swift"; sourceTree = "<group>"; };
 		6C66921D1DF15D5B008E2988 /* UIScrollView+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+LLExtension.swift"; sourceTree = "<group>"; };
 		6C66921F1DF15D96008E2988 /* LLBaseRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBaseRefreshHeader.swift; sourceTree = "<group>"; };
-		6C6692231DF1679D008E2988 /* LLRefreshStateHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshStateHeader.swift; sourceTree = "<group>"; };
+		6C6692251DF18683008E2988 /* LLRefreshStateHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshStateHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,6 @@
 			children = (
 				6C66921F1DF15D96008E2988 /* LLBaseRefreshHeader.swift */,
 				6C6692171DF15C90008E2988 /* LLRefreshHeader.swift */,
-				6C6692231DF1679D008E2988 /* LLRefreshStateHeader.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -139,6 +138,7 @@
 		6C66921A1DF15CA7008E2988 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				6C6692251DF18683008E2988 /* LLRefreshStateHeader.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 				6C6692191DF15C90008E2988 /* LLRefreshHeader.swift in Sources */,
 				6C51A9F81D3CC1F3006EF254 /* AppDelegate.swift in Sources */,
 				6C6692201DF15D96008E2988 /* LLBaseRefreshHeader.swift in Sources */,
-				6C6692241DF1679D008E2988 /* LLRefreshStateHeader.swift in Sources */,
+				6C6692261DF18683008E2988 /* LLRefreshStateHeader.swift in Sources */,
 				6C66921C1DF15D09008E2988 /* UIView+LLExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
