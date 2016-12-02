@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="zqc-1y-kkB">
             <objects>
-                <viewController id="eUX-ZY-fhn" customClass="ViewController" customModule="LLRefrsh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="eUX-ZY-fhn" customClass="ViewController" customModule="LLRefrsh" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H7f-bY-9Vh"/>
                         <viewControllerLayoutGuide type="bottom" id="c1n-Ss-irr"/>
@@ -23,7 +23,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qop-ER-x56">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="eUX-ZY-fhn" id="SuR-4V-Hms"/>
                                     <outlet property="delegate" destination="eUX-ZY-fhn" id="Inf-EC-9Zo"/>

@@ -1,8 +1,8 @@
 //
-//  UIScrollView+Extension.swift
+//  UIScrollView+LLExtension.swift
 //  LLRefrsh
 //
-//  Created by LiXingLe on 16/11/24.
+//  Created by 李兴乐 on 2016/12/2.
 //  Copyright © 2016年 com.wildcat. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 var LLRefreshHeaderKey = "\0"
 
 extension UIScrollView {
-    var ll_header:BaseRefreshHeader? {
+    var ll_header:LLBaseRefreshHeader? {
         set{
             if newValue != ll_header {
                 self.ll_header?.removeFromSuperview()
@@ -24,7 +24,7 @@ extension UIScrollView {
             
         }
         get{
-            let header = objc_getAssociatedObject(self, &LLRefreshHeaderKey) as? BaseRefreshHeader
+            let header = objc_getAssociatedObject(self, &LLRefreshHeaderKey) as? LLBaseRefreshHeader
             return header
         }
     }
@@ -51,6 +51,5 @@ extension UIScrollView {
             self.contentInset = contentInset
         }
     }
-
-    
 }
+

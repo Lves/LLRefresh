@@ -8,17 +8,20 @@
 
 import UIKit
 
-class LLRefreshHeader: BaseRefreshHeader {
+class LLRefreshHeader: LLBaseRefreshHeader {
     
     var arrowView:UIImageView?
-    let lastUpdateTimeKey = "lastUpdateTimeKey"
+    ///last update time
+    var lastUpdateTime:NSDate? {
+        get{
+            return NSUserDefaults.standardUserDefaults().objectForKey(LLConstant.LastUpdateTimeKey) as? NSDate
+        }
+    }
     var insetTDelta:CGFloat = 0
     
     /** 忽略多少scrollView的contentInset的top */
     var ignoredScrollViewContentInsetTop:CGFloat = 0
 
-    
-    
     override func setState(state:LLRefreshState) {
         let oldValue = refreshState
         super.setState(state)
@@ -30,14 +33,12 @@ class LLRefreshHeader: BaseRefreshHeader {
             if oldValue != LLRefreshState.Refreshing {
                 return
             }
-            //保存刷新状态
-            NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: lastUpdateTimeKey)
+            //保存刷新时间
+            NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: LLConstant.LastUpdateTimeKey)
             NSUserDefaults.standardUserDefaults().synchronize()
             // 恢复inset和offset
-            
-            UIView.animateWithDuration(0.4, animations: {
+            UIView.animateWithDuration(LLConstant.AnimationDuration, animations: {
                 self._scrollView?.ll_insetT += self.insetTDelta
-                print("self._scrollView?.ll_insetT: \(self._scrollView?.ll_insetT)")
                 self._scrollView?.setContentOffset(CGPointMake(0, 0), animated: false)
             }, completion: { (finished) in
                 self._pullingPercent = 0.0
@@ -48,7 +49,7 @@ class LLRefreshHeader: BaseRefreshHeader {
             
         }else if state == .Refreshing {
             dispatch_async(dispatch_get_main_queue(), {
-                UIView.animateWithDuration(0.4, animations: {
+                UIView.animateWithDuration(LLConstant.AnimationDuration, animations: {
                     let top = (self._scrollViewOriginalInset?.top ?? 0) + self.ll_h
                     self._scrollView?.ll_insetT = top
                     self._scrollView?.setContentOffset(CGPointMake(0, -top), animated: false)
@@ -65,8 +66,8 @@ class LLRefreshHeader: BaseRefreshHeader {
         self.ll_y = -ll_h - ignoredScrollViewContentInsetTop
     }
     
-    override func buildUI() {
-        super.buildUI()
+    override func prepare() {
+        super.prepare()
         ll_h = LLConstant.HeaderHeight
     }
     
@@ -77,10 +78,12 @@ class LLRefreshHeader: BaseRefreshHeader {
                 return
             }
             //停留解决
+            //1.1 有下拉距离则使用下拉距离
             var insetT = -(_scrollView?.ll_offsetY ?? 0) > _scrollViewOriginalInset?.top ? -(_scrollView?.ll_offsetY ?? 0) : _scrollViewOriginalInset?.top
-            insetT = insetT > self.ll_h + (_scrollViewOriginalInset?.top ?? 0) ? self.ll_h + (_scrollViewOriginalInset?.top ?? 0) : insetT;
+            //1.2 下拉距离和content顶部距离使用小的那个
+            let contentTopH:CGFloat = self.ll_h + (_scrollViewOriginalInset?.top ?? 0)
+            insetT = insetT > contentTopH ? contentTopH : insetT;
             
-            print("insetT:::::\(insetT)")
             _scrollView?.ll_insetT = insetT ?? 0
             
             self.insetTDelta = (_scrollViewOriginalInset?.top ?? 0) - (insetT ?? 0)
@@ -114,9 +117,6 @@ class LLRefreshHeader: BaseRefreshHeader {
         }
     }
 
-    
-    
-    
     //MARK: - public
     override func endRefreshing()  {
         dispatch_async(dispatch_get_main_queue(), {

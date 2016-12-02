@@ -15,7 +15,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         
         
-        let view = LLRefreshHeader()
+        let view = LLRefreshStateHeader()
         view.refreshingBlock = {[weak self] _ in
              sleep(2)
              self?.tableView.ll_header?.endRefreshing()

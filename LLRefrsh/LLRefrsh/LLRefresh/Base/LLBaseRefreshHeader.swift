@@ -12,10 +12,12 @@ import UIKit
 
 struct LLConstant {
     static let HeaderHeight:CGFloat = 54
+    static let AnimationDuration:NSTimeInterval = 0.4
+    static let LastUpdateTimeKey:String = "RefreshHeaderLastUpdatedTimeKey"
 }
 
 
-enum LLRefreshState {
+enum LLRefreshState:Int {
     case Normal
     case Pulling
     case Refreshing
@@ -23,7 +25,7 @@ enum LLRefreshState {
     case NoMoreData
 }
 
-class BaseRefreshHeader: UIView {
+class LLBaseRefreshHeader: UIView {
     var panGesture:UIPanGestureRecognizer?
     
     var refreshState:LLRefreshState = .Normal
@@ -40,19 +42,19 @@ class BaseRefreshHeader: UIView {
     var refreshingBlock:(()->())?
     var beginRefreshingCompletionBlock:(()->())?
     var endRefreshingCompletionBlock:(()->())?
-
+    
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        buildUI()
+        prepare()
         self.setState(.Normal)
     }
     override func layoutSubviews() {
         placeSubViews()
         super.layoutSubviews()
-       
+        
     }
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
@@ -77,7 +79,7 @@ class BaseRefreshHeader: UIView {
             _scrollView = scrollView
             scrollView.alwaysBounceVertical = true
             _scrollViewOriginalInset = _scrollView?.contentInset
-          
+            
             
             scrollView.addObserver(self, forKeyPath: "contentOffset", options: [NSKeyValueObservingOptions.New , NSKeyValueObservingOptions.Old], context: nil)
             scrollView.addObserver(self, forKeyPath: "contentSize", options: [NSKeyValueObservingOptions.New , NSKeyValueObservingOptions.Old], context: nil)
@@ -144,18 +146,16 @@ class BaseRefreshHeader: UIView {
             if let beginRefreshingCompletionBlock = self?.beginRefreshingCompletionBlock {
                 beginRefreshingCompletionBlock()
             }
-        })
+            })
     }
     
     
-    func buildUI(){
+    func prepare(){
         autoresizingMask = .FlexibleWidth
         backgroundColor = UIColor.clearColor()
-        ll_h = LLConstant.HeaderHeight
-        ll_y = -40
     }
     func updateUI()  {
-            dispatch_async(dispatch_get_main_queue()) { [weak self] _ in
+        dispatch_async(dispatch_get_main_queue()) { [weak self] _ in
             self?.setNeedsLayout()
         }
     }
@@ -171,5 +171,5 @@ class BaseRefreshHeader: UIView {
         self.panGesture?.removeObserver(self, forKeyPath: "state")
         self.panGesture = nil
     }
-
+    
 }

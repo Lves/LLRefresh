@@ -1,15 +1,14 @@
 //
-//  UIView+Extension.swift
+//  UIView+LLExtension.swift
 //  LLRefrsh
 //
-//  Created by LiXingLe on 16/11/24.
+//  Created by 李兴乐 on 2016/12/2.
 //  Copyright © 2016年 com.wildcat. All rights reserved.
 //
 
 import UIKit
-
 extension UIView {
-    /// EZSwiftExtensions
+   
     public var ll_x: CGFloat {
         get {
             return self.frame.origin.x
@@ -17,8 +16,7 @@ extension UIView {
             self.frame = CGRect(x: value, y: self.ll_y, width: self.ll_w, height: self.ll_h)
         }
     }
-    
-    /// EZSwiftExtensions
+
     public var ll_y: CGFloat {
         get {
             return self.frame.origin.y
@@ -27,7 +25,7 @@ extension UIView {
         }
     }
     
-    /// EZSwiftExtensions
+  
     public var ll_w: CGFloat {
         get {
             return self.frame.size.width
@@ -36,7 +34,6 @@ extension UIView {
         }
     }
     
-    /// EZSwiftExtensions
     public var ll_h: CGFloat {
         get {
             return self.frame.size.height
@@ -46,4 +43,3 @@ extension UIView {
     }
     
 }
-
