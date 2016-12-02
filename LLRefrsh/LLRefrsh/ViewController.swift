@@ -17,7 +17,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         let view = LLRefreshHeader()
         view.refreshingBlock = {[weak self] _ in
-             sleep(10)
+             sleep(2)
              self?.tableView.ll_header?.endRefreshing()
         }
         view.backgroundColor = UIColor.brownColor()

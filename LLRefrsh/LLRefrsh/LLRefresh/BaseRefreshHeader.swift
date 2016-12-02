@@ -155,7 +155,7 @@ class BaseRefreshHeader: UIView {
         ll_y = -40
     }
     func updateUI()  {
-        dispatch_async(dispatch_get_main_queue()) { [weak self] _ in
+            dispatch_async(dispatch_get_main_queue()) { [weak self] _ in
             self?.setNeedsLayout()
         }
     }

@@ -38,6 +38,7 @@ class LLRefreshHeader: BaseRefreshHeader {
             UIView.animateWithDuration(0.4, animations: {
                 self._scrollView?.ll_insetT += self.insetTDelta
                 print("self._scrollView?.ll_insetT: \(self._scrollView?.ll_insetT)")
+                self._scrollView?.setContentOffset(CGPointMake(0, 0), animated: false)
             }, completion: { (finished) in
                 self._pullingPercent = 0.0
                 if let endRefreshingCompletionBlock = self.endRefreshingCompletionBlock {

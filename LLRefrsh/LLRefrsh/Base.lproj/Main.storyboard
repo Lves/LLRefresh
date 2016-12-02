@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eUX-ZY-fhn">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tcx-nr-bie">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qop-ER-x56">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="eUX-ZY-fhn" id="SuR-4V-Hms"/>
@@ -32,7 +32,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qop-ER-x56" firstAttribute="top" secondItem="g4R-53-gKa" secondAttribute="top" id="95L-lz-iQg"/>
+                            <constraint firstItem="qop-ER-x56" firstAttribute="top" secondItem="H7f-bY-9Vh" secondAttribute="bottom" id="4g7-8M-rkb"/>
                             <constraint firstAttribute="trailing" secondItem="qop-ER-x56" secondAttribute="trailing" id="WB0-fT-QwE"/>
                             <constraint firstItem="qop-ER-x56" firstAttribute="leading" secondItem="g4R-53-gKa" secondAttribute="leading" id="YVh-cA-7ce"/>
                             <constraint firstItem="c1n-Ss-irr" firstAttribute="top" secondItem="qop-ER-x56" secondAttribute="bottom" id="dFK-00-jTv"/>
@@ -57,6 +57,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eUX-ZY-fhn" kind="relationship" relationship="rootViewController" id="OeG-0J-2Wj"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLm-DE-NzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
