@@ -20,9 +20,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
              sleep(2)
              self?.tableView.ll_header?.endRefreshing()
         }
-        view.backgroundColor = UIColor.brownColor()
         self.tableView.ll_header = view
-        
         self.tableView.ll_header?.beginRefreshing()
 
     }
