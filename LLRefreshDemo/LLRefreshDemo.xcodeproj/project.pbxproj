@@ -252,13 +252,16 @@
 				TargetAttributes = {
 					6C2DF8CF1DF2DAE600202268 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0810;
 					};
 					6C2DF8E31DF2DAE600202268 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 6C2DF8CF1DF2DAE600202268;
 					};
 					6C2DF8EE1DF2DAE600202268 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 6C2DF8CF1DF2DAE600202268;
 					};
 				};
@@ -470,6 +473,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefreshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -481,6 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefreshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -492,6 +497,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefreshDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLRefreshDemo.app/LLRefreshDemo";
 			};
 			name = Debug;
@@ -504,6 +510,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefreshDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LLRefreshDemo.app/LLRefreshDemo";
 			};
 			name = Release;
@@ -515,6 +522,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefreshDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = LLRefreshDemo;
 			};
 			name = Debug;
@@ -526,6 +534,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefreshDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = LLRefreshDemo;
 			};
 			name = Release;
@@ -549,6 +558,7 @@
 				6C2DF8FA1DF2DAE600202268 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C2DF8FB1DF2DAE600202268 /* Build configuration list for PBXNativeTarget "LLRefreshDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +567,7 @@
 				6C2DF8FD1DF2DAE600202268 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C2DF8FE1DF2DAE600202268 /* Build configuration list for PBXNativeTarget "LLRefreshDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +576,7 @@
 				6C2DF9001DF2DAE600202268 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -30,7 +30,17 @@ class LLBaseRefreshHeader: UIView {
     
     var refreshState:LLRefreshState = .Normal
     ///下拉百分比
-    var _pullingPercent:CGFloat = 0
+    var _pullingPercent:CGFloat = 0 {
+        didSet{
+            guard !isRefreshing else {
+                return
+            }
+            //修改透明度
+        }
+    }
+    var isRefreshing:Bool{
+        return refreshState == .Refreshing || refreshState == .WillRefresh
+    }
     ///ScrollView起始位置
     var _scrollViewOriginalInset:UIEdgeInsets?
     
@@ -65,6 +75,11 @@ class LLBaseRefreshHeader: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    override func removeFromSuperview() {
+        removeLLObservers()
+        super.removeFromSuperview()
+        
     }
     
     override func willMoveToSuperview(newSuperview: UIView?) {
