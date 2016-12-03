@@ -32,12 +32,13 @@
 
 
 ```swift
-let refrshHeader = LLRefreshStateHeader()
-refrshHeader.refreshingBlock = {[weak self] _ in
-     sleep(2)
-     self?.tableView.ll_header?.endRefreshing()
+//1.0 Init
+self.tableView.ll_header =  LLRefreshStateHeader {[weak self] _ in
+    sleep(2)
+    //3.0 Stop Refreshing
+    self?.tableView.ll_header?.endRefreshing()
 }
-self.tableView.ll_header = refrshHeader
+//2.0 Begin refreshing
 self.tableView.ll_header?.beginRefreshing()
 ```
 

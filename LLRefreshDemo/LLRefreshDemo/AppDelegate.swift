@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  LLRefrsh
+//  LLRefreshDemo
 //
-//  Created by LiXingLe on 16/7/18.
-//  Copyright © 2016年 com.wildcat. All rights reserved.
+//  Created by 李兴乐 on 2016/12/3.
+//  Copyright © 2016年 com.lvesli. All rights reserved.
 //
 
 import UIKit
