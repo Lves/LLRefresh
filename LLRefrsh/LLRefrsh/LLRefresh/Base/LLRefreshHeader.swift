@@ -19,6 +19,19 @@ class LLRefreshHeader: LLBaseRefreshHeader {
     }
     var insetTDelta:CGFloat = 0
     
+    init() {
+        super.init(frame: CGRectZero)
+    }
+    init(refreshingBlock:(()->())?) {
+        super.init(frame: CGRectZero)
+        self.refreshingBlock = refreshingBlock
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+ 
+    
     /** 忽略多少scrollView的contentInset的top */
     var ignoredScrollViewContentInsetTop:CGFloat = 0
 

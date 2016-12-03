@@ -44,7 +44,7 @@ class LLBaseRefreshHeader: UIView {
     var endRefreshingCompletionBlock:(()->())?
     
     
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         

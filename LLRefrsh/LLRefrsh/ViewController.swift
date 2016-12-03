@@ -13,14 +13,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let view = LLRefreshStateHeader()
-        view.refreshingBlock = {[weak self] _ in
-             sleep(2)
-             self?.tableView.ll_header?.endRefreshing()
+        //1.0 Init
+        self.tableView.ll_header =  LLRefreshStateHeader {[weak self] _ in
+            sleep(2)
+            self?.tableView.ll_header?.endRefreshing()
         }
-        self.tableView.ll_header = view
+        //2.0 begin refresh
         self.tableView.ll_header?.beginRefreshing()
 
     }
