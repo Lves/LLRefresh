@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qxE-Af-uZd" id="RLt-fY-lS2">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="53.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -60,7 +60,7 @@
         <!--State Refresh View Controller-->
         <scene sceneID="Jct-7H-oPm">
             <objects>
-                <viewController storyboardIdentifier="StateRefreshViewController" id="OO9-nT-x5s" customClass="StateRefreshViewController" customModule="LLRefreshDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StateRefreshViewController" automaticallyAdjustsScrollViewInsets="NO" id="OO9-nT-x5s" customClass="StateRefreshViewController" customModule="LLRefreshDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mmx-e4-8CZ"/>
                         <viewControllerLayoutGuide type="bottom" id="2Lq-zz-GGc"/>

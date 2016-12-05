@@ -41,7 +41,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 //        tableView.contentInset = UIEdgeInsetsMake(80, 0, 0, 0)
 //        tableView?.setContentOffset(CGPointMake(0, -80), animated: false)
         
-        dataArray = ["StateRefreshViewController"]
+        dataArray = ["StateRefreshViewController","ArrowViewController"]
 
     }
 
@@ -66,7 +66,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
-        let vc = UIViewController.instanceViewControllerInStoryboardWithName(dataArray?[indexPath.row] ?? "")
+
+        
+        var vc = UIViewController.instanceViewControllerInStoryboardWithName(dataArray?[indexPath.row] ?? "")
+        if indexPath.row == 1 {
+            vc = ArrowViewController()
+        }
         navigationController?.pushViewController(vc!, animated: true)
     }
 
