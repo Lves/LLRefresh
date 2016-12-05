@@ -23,6 +23,7 @@ class StateRefreshViewController: UIViewController {
         })
         //2.0 Stop refreshing
         tableView.ll_header?.beginRefreshing()
+        print(self.automaticallyAdjustsScrollViewInsets)
     }
 
 

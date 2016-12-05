@@ -37,11 +37,10 @@ class LLRefreshHeader: LLBaseRefreshHeader {
 
     override func setState(state:LLRefreshState) {
         let oldValue = refreshState
-        super.setState(state)
         guard state != oldValue else {
             return
         }
-        
+        super.setState(state)
         if state == .Normal{
             if oldValue != LLRefreshState.Refreshing {
                 return
@@ -51,8 +50,8 @@ class LLRefreshHeader: LLBaseRefreshHeader {
             NSUserDefaults.standardUserDefaults().synchronize()
             // 恢复inset和offset
             UIView.animateWithDuration(LLConstant.AnimationDuration, animations: {
-                self._scrollView?.ll_insetT += self.insetTDelta
-                self._scrollView?.setContentOffset(CGPointMake(0, 0), animated: false)
+                let top = (self._scrollView?.contentInset.top ?? 0) + self.insetTDelta
+                self._scrollView?.contentInset = UIEdgeInsetsMake(top, 0, 0, 0)
             }, completion: { (finished) in
                 self._pullingPercent = 0.0
                 if let endRefreshingCompletionBlock = self.endRefreshingCompletionBlock {
@@ -64,7 +63,7 @@ class LLRefreshHeader: LLBaseRefreshHeader {
             dispatch_async(dispatch_get_main_queue(), {
                 UIView.animateWithDuration(LLConstant.AnimationDuration, animations: {
                     let top = (self._scrollViewOriginalInset?.top ?? 0) + self.ll_h
-                    self._scrollView?.ll_insetT = top
+                    self._scrollView?.contentInset = UIEdgeInsetsMake(top, 0, 0, 0)
                     self._scrollView?.setContentOffset(CGPointMake(0, -top), animated: false)
                 }, completion: { (finished) in
                     self.executeRefreshingCallback()
@@ -97,7 +96,8 @@ class LLRefreshHeader: LLBaseRefreshHeader {
             let contentTopH:CGFloat = self.ll_h + (_scrollViewOriginalInset?.top ?? 0)
             insetT = insetT > contentTopH ? contentTopH : insetT;
             
-            _scrollView?.ll_insetT = insetT ?? 0
+//            _scrollView?.ll_insetT = insetT ?? 0
+            self._scrollView?.contentInset = UIEdgeInsetsMake(insetT ?? 0, 0, 0, 0)
             
             self.insetTDelta = (_scrollViewOriginalInset?.top ?? 0) - (insetT ?? 0)
             return

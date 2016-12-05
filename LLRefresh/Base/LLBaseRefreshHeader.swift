@@ -99,7 +99,7 @@ class LLBaseRefreshHeader: UIView {
             scrollView.addObserver(self, forKeyPath: "contentOffset", options: [NSKeyValueObservingOptions.New , NSKeyValueObservingOptions.Old], context: nil)
             scrollView.addObserver(self, forKeyPath: "contentSize", options: [NSKeyValueObservingOptions.New , NSKeyValueObservingOptions.Old], context: nil)
             
-            self.panGesture = scrollView.panGestureRecognizer
+            self.panGesture = _scrollView?.panGestureRecognizer
             self.panGesture?.addObserver(self, forKeyPath: "state", options: [NSKeyValueObservingOptions.New , NSKeyValueObservingOptions.Old], context: nil)
             
             
@@ -117,6 +117,7 @@ class LLBaseRefreshHeader: UIView {
         guard !hidden else {
             return
         }
+        print(change)
         if keyPath == "contentOffset" {
             scrollViewContentOffsetDidChange(change)
         }else if keyPath == "state" {
@@ -139,7 +140,7 @@ class LLBaseRefreshHeader: UIView {
             self.setState(.Refreshing)
         }else {
             if refreshState != .Refreshing {
-                self.setState(.Refreshing)
+                self.setState(.WillRefresh)
                 setNeedsDisplay()
             }
         }

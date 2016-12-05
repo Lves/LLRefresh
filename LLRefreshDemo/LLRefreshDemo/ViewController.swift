@@ -37,6 +37,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         
+
+//        tableView.contentInset = UIEdgeInsetsMake(80, 0, 0, 0)
+//        tableView?.setContentOffset(CGPointMake(0, -80), animated: false)
+        
         dataArray = ["StateRefreshViewController"]
 
     }

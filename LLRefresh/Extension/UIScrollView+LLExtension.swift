@@ -42,14 +42,5 @@ extension UIScrollView {
             self.contentOffset = offset
         }
     }
-    public var ll_insetT:CGFloat {
-        get {
-            return self.contentInset.top
-        } set(value) {
-            var contentInset = self.contentInset
-            contentInset.top = ll_insetT
-            self.contentInset = contentInset
-        }
-    }
 }
 
