@@ -14,6 +14,7 @@ struct LLConstant {
     static let HeaderHeight:CGFloat = 54
     static let AnimationDuration:NSTimeInterval = 0.4
     static let LastUpdateTimeKey:String = "RefreshHeaderLastUpdatedTimeKey"
+    static let RefreshLabelLeftInset:CGFloat = 25
 }
 
 

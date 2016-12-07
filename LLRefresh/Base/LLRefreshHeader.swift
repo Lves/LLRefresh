@@ -10,7 +10,7 @@ import UIKit
 
 class LLRefreshHeader: LLBaseRefreshHeader {
     
-    var arrowView:UIImageView?
+    
     ///last update time
     var lastUpdateTime:NSDate? {
         get{

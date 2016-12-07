@@ -8,15 +8,11 @@
 
 import UIKit
 
-extension String {
-    var length: Int {
-        return self.characters.count
-    }
-}
+
 
 extension UIViewController{
     class func instanceViewControllerInStoryboardWithName(name: String, storyboardName: String? = "Main") -> UIViewController? {
-        if let storyboardName = storyboardName where storyboardName.length > 0 {
+        if let storyboardName = storyboardName where storyboardName.ll_length > 0 {
             let story =  UIStoryboard(name: storyboardName, bundle: nil)
             if story.valueForKey("identifierToNibNameMap")?.objectForKey(name) != nil {
                 return story.instantiateViewControllerWithIdentifier(name)

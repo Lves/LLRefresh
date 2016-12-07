@@ -16,10 +16,11 @@ class ArrowViewController: UIViewController ,UITableViewDelegate,UITableViewData
         let tableView = UITableView(frame: self.view.bounds)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = UIColor(colorLiteralRed: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         
         tableView.tableFooterView = UIView()
         //1.0 Init
-        tableView.ll_header = LLRefreshStateHeader(refreshingBlock: { _ in
+        tableView.ll_header = LLRefreshNormalHeader(refreshingBlock: { _ in
             sleep(2)
             //3.0 End refreshing
             tableView.ll_header?.endRefreshing()

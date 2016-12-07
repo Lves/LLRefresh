@@ -10,7 +10,7 @@ import UIKit
 
 class LLRefreshStateHeader: LLRefreshHeader {
     
-    private lazy var stateLabel: UILabel = {
+    lazy var stateLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .Center
         label.font = UIFont.systemFontOfSize(14)
@@ -19,7 +19,7 @@ class LLRefreshStateHeader: LLRefreshHeader {
         self.addSubview(label)
         return label
     }()
-    private lazy var lastUpdatedTimeLabel: UILabel = {
+    lazy var lastUpdatedTimeLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .Center
         label.font = UIFont.systemFontOfSize(14)
@@ -32,6 +32,7 @@ class LLRefreshStateHeader: LLRefreshHeader {
     private var stateTitles:[Int:String] = [:]
     
     var lastUpdatedTimeText:((NSDate?)->())?
+    var labelLeftInset:CGFloat = 0
     
     //MARK: -  集成父类方法
     override func placeSubViews() {
@@ -63,6 +64,9 @@ class LLRefreshStateHeader: LLRefreshHeader {
     
     override func prepare() {
         super.prepare()
+        // 初始化间距
+        labelLeftInset = LLConstant.RefreshLabelLeftInset
+        
         setTitle("下拉可以刷新", state: .Normal)
         setTitle("松开立即刷新", state: .Pulling)
         setTitle("正在刷新数据中", state: .Refreshing)

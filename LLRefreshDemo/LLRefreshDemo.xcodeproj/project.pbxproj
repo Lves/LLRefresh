@@ -21,6 +21,8 @@
 		6C2DF90F1DF2DB0C00202268 /* UIView+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2DF90A1DF2DB0C00202268 /* UIView+LLExtension.swift */; };
 		6C2DF9121DF2DE2F00202268 /* StateRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2DF9111DF2DE2F00202268 /* StateRefreshViewController.swift */; };
 		6C3E651F1DF57A29004832AD /* ArrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3E651E1DF57A29004832AD /* ArrowViewController.swift */; };
+		6C7A9F651DF81B74009FFE1C /* LLRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A9F641DF81B74009FFE1C /* LLRefreshNormalHeader.swift */; };
+		6C7A9F671DF81FE2009FFE1C /* UILabel+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A9F661DF81FE2009FFE1C /* UILabel+LLExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		6C2DF90A1DF2DB0C00202268 /* UIView+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LLExtension.swift"; sourceTree = "<group>"; };
 		6C2DF9111DF2DE2F00202268 /* StateRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateRefreshViewController.swift; sourceTree = "<group>"; };
 		6C3E651E1DF57A29004832AD /* ArrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowViewController.swift; sourceTree = "<group>"; };
+		6C7A9F641DF81B74009FFE1C /* LLRefreshNormalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshNormalHeader.swift; sourceTree = "<group>"; };
+		6C7A9F661DF81FE2009FFE1C /* UILabel+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+LLExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,9 +148,9 @@
 		6C2DF9011DF2DB0C00202268 /* LLRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				6C2DF9081DF2DB0C00202268 /* Extension */,
 				6C2DF9021DF2DB0C00202268 /* Base */,
 				6C2DF9051DF2DB0C00202268 /* Custom */,
-				6C2DF9081DF2DB0C00202268 /* Extension */,
 			);
 			name = LLRefresh;
 			path = ../LLRefresh;
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				6C2DF9061DF2DB0C00202268 /* LLRefreshStateHeader.swift */,
+				6C7A9F641DF81B74009FFE1C /* LLRefreshNormalHeader.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			children = (
 				6C2DF9091DF2DB0C00202268 /* UIScrollView+LLExtension.swift */,
 				6C2DF90A1DF2DB0C00202268 /* UIView+LLExtension.swift */,
+				6C7A9F661DF81FE2009FFE1C /* UILabel+LLExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -323,11 +329,13 @@
 			files = (
 				6C3E651F1DF57A29004832AD /* ArrowViewController.swift in Sources */,
 				6C2DF90C1DF2DB0C00202268 /* LLRefreshHeader.swift in Sources */,
+				6C7A9F671DF81FE2009FFE1C /* UILabel+LLExtension.swift in Sources */,
 				6C2DF8D61DF2DAE600202268 /* ViewController.swift in Sources */,
 				6C2DF90D1DF2DB0C00202268 /* LLRefreshStateHeader.swift in Sources */,
 				6C2DF90E1DF2DB0C00202268 /* UIScrollView+LLExtension.swift in Sources */,
 				6C2DF9121DF2DE2F00202268 /* StateRefreshViewController.swift in Sources */,
 				6C2DF90B1DF2DB0C00202268 /* LLBaseRefreshHeader.swift in Sources */,
+				6C7A9F651DF81B74009FFE1C /* LLRefreshNormalHeader.swift in Sources */,
 				6C2DF90F1DF2DB0C00202268 /* UIView+LLExtension.swift in Sources */,
 				6C2DF8D41DF2DAE600202268 /* AppDelegate.swift in Sources */,
 			);
