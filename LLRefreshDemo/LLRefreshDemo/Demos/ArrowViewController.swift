@@ -9,9 +9,11 @@
 import UIKit
 
 class ArrowViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
+    var array:[Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         let tableView = UITableView(frame: self.view.bounds)
         tableView.delegate = self
@@ -22,8 +24,14 @@ class ArrowViewController: UIViewController ,UITableViewDelegate,UITableViewData
         //1.0 Init
         tableView.ll_header = LLRefreshNormalHeader(refreshingBlock: { _ in
             sleep(2)
+            let count = self.array.count
+            for index in count..<count+5 {
+                self.array.append(index)
+            }
+            
             //3.0 End refreshing
             tableView.ll_header?.endRefreshing()
+            tableView.reloadData()
         })
         //2.0 Stop refreshing
         tableView.ll_header?.beginRefreshing()
@@ -39,7 +47,7 @@ class ArrowViewController: UIViewController ,UITableViewDelegate,UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return array.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell =  tableView.dequeueReusableCellWithIdentifier("Cell")
