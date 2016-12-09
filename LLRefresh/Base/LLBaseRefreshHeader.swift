@@ -118,7 +118,6 @@ class LLBaseRefreshHeader: UIView {
         guard !hidden else {
             return
         }
-        print(change)
         if keyPath == "contentOffset" {
             scrollViewContentOffsetDidChange(change)
         }else if keyPath == "state" {

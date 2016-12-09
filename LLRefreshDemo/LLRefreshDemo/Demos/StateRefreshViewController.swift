@@ -16,7 +16,7 @@ class StateRefreshViewController: UIViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         //1.0 Init
-        tableView.ll_header = LLRefreshStateHeader(refreshingBlock: {[weak self] _ in
+        tableView.ll_header = LLRefreshBGImageHeader(refreshingBlock: {[weak self] _ in
             sleep(2)
             //3.0 End refreshing
             self?.tableView.ll_header?.endRefreshing()
