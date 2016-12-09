@@ -46,8 +46,15 @@ self.tableView.ll_header?.beginRefreshing()
 
 
 
-### Doing
+### Demo
 
+1. Noraml refresh header
+
+![normal](https://github.com/Lves/LLRefresh/blob/master/Docs/123.png)
+
+1. Refresh header with BgImage
+
+![bgheader](https://github.com/Lves/LLRefresh/blob/master/Docs/234.png)
 
 
 
