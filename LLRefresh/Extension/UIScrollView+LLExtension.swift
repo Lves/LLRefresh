@@ -9,6 +9,18 @@
 import UIKit
 
 var LLRefreshHeaderKey = "\0"
+var LLRefreshFooterKey = "\0"
+var LLRefreshReloadDataBlockKey = "\0"
+
+typealias VoidBlock = (count: Int?)->(Void)
+
+class LLObjectWrapper: NSObject {
+    let value: ((count: Int?) -> Void)?
+    
+    init(value: (count: Int?) -> Void) {
+        self.value = value
+    }
+}
 
 extension UIScrollView {
     var ll_header:LLBaseRefreshHeader? {
@@ -28,6 +40,40 @@ extension UIScrollView {
             return header
         }
     }
+    
+    var ll_footer:LLBaseRefreshHeader? {
+        set{
+            if newValue != ll_footer {
+                self.ll_footer?.removeFromSuperview()
+                self.insertSubview(newValue!, atIndex: 0)
+                //存储
+                self.willChangeValueForKey("ll_footer")
+                objc_setAssociatedObject(self, &LLRefreshFooterKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
+                self.didChangeValueForKey("ll_footer")
+            }
+            
+        }
+        get{
+            let header = objc_getAssociatedObject(self, &LLRefreshFooterKey) as? LLBaseRefreshHeader
+            return header
+        }
+    }
+    
+    var ll_reloadDataBlock:VoidBlock? {
+        set{
+            self.willChangeValueForKey("ll_reloadDataBlock")
+            let wrapper = LLObjectWrapper(value: newValue!)
+            objc_setAssociatedObject(self, &LLRefreshReloadDataBlockKey, wrapper, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+            
+            self.didChangeValueForKey("ll_reloadDataBlock")
+        }
+        get{
+            let wrapper:LLObjectWrapper? = objc_getAssociatedObject(self, &LLRefreshReloadDataBlockKey) as? LLObjectWrapper
+            return wrapper?.value
+        }
+    }
+
+    
     
 }
 

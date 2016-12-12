@@ -24,6 +24,7 @@
 		6C3E651F1DF57A29004832AD /* ArrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3E651E1DF57A29004832AD /* ArrowViewController.swift */; };
 		6C7A9F651DF81B74009FFE1C /* LLRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A9F641DF81B74009FFE1C /* LLRefreshNormalHeader.swift */; };
 		6C7A9F671DF81FE2009FFE1C /* UILabel+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A9F661DF81FE2009FFE1C /* UILabel+LLExtension.swift */; };
+		6CCB35DC1DFEBE54002CB3D3 /* LLRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB35DB1DFEBE54002CB3D3 /* LLRefreshFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		6C3E651E1DF57A29004832AD /* ArrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowViewController.swift; sourceTree = "<group>"; };
 		6C7A9F641DF81B74009FFE1C /* LLRefreshNormalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshNormalHeader.swift; sourceTree = "<group>"; };
 		6C7A9F661DF81FE2009FFE1C /* UILabel+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+LLExtension.swift"; sourceTree = "<group>"; };
+		6CCB35DB1DFEBE54002CB3D3 /* LLRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshFooter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				6C2DF9031DF2DB0C00202268 /* LLBaseRefreshHeader.swift */,
 				6C2DF9041DF2DB0C00202268 /* LLRefreshHeader.swift */,
+				6CCB35DB1DFEBE54002CB3D3 /* LLRefreshFooter.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				6C2DF90D1DF2DB0C00202268 /* LLRefreshStateHeader.swift in Sources */,
 				6C2DF90E1DF2DB0C00202268 /* UIScrollView+LLExtension.swift in Sources */,
 				6C2DF9121DF2DE2F00202268 /* StateRefreshViewController.swift in Sources */,
+				6CCB35DC1DFEBE54002CB3D3 /* LLRefreshFooter.swift in Sources */,
 				6C2DF90B1DF2DB0C00202268 /* LLBaseRefreshHeader.swift in Sources */,
 				6C7A9F651DF81B74009FFE1C /* LLRefreshNormalHeader.swift in Sources */,
 				6C2DF90F1DF2DB0C00202268 /* UIView+LLExtension.swift in Sources */,
