@@ -63,7 +63,7 @@ extension UIScrollView {
         set{
             self.willChangeValueForKey("ll_reloadDataBlock")
             let wrapper = LLObjectWrapper(value: newValue!)
-            objc_setAssociatedObject(self, &LLRefreshReloadDataBlockKey, wrapper, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+            objc_setAssociatedObject(self, &LLRefreshReloadDataBlockKey, wrapper, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             
             self.didChangeValueForKey("ll_reloadDataBlock")
         }
@@ -88,5 +88,19 @@ extension UIScrollView {
             self.contentOffset = offset
         }
     }
+    
+    
+    public var ll_contentH: CGFloat {
+        get {
+            return self.contentSize.height
+        }
+        set(value) {
+            var contentSize = self.contentSize
+            contentSize.height = value
+            self.contentSize = contentSize
+        }
+    }
+    
+    
 }
 

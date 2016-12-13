@@ -9,6 +9,10 @@
 import UIKit
 
 class LLRefreshFooter: LLBaseRefreshHeader {
+    //是否自动根据数据隐藏
+    var automaticallyHidden:Bool = false
+    
+    
 
     init(refreshingBlock:(()->())?) {
         super.init(frame: CGRectZero)
@@ -29,8 +33,10 @@ class LLRefreshFooter: LLBaseRefreshHeader {
         if newSuperview != nil {
             if _scrollView is UITableView || _scrollView is UICollectionView {
                 
-                _scrollView?.ll_reloadDataBlock = { block in
-                    
+                _scrollView?.ll_reloadDataBlock = {[weak self] count in
+                    if self?.automaticallyHidden == true {
+                        self?.hidden = count == 0
+                    }
                 }
             }
  
