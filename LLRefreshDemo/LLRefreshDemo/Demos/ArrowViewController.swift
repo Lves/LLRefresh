@@ -8,17 +8,13 @@
 
 import UIKit
 
-class ArrowViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
+class ArrowViewController: UIViewController{
     var array:[Int] = []
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        let tableView = UITableView(frame: self.view.bounds)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = UIColor(colorLiteralRed: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         
         tableView.tableFooterView = UIView()
         //1.0 Init
@@ -30,8 +26,8 @@ class ArrowViewController: UIViewController ,UITableViewDelegate,UITableViewData
             }
             
             //3.0 End refreshing
-            tableView.ll_header?.endRefreshing()
-            tableView.reloadData()
+            self.tableView.ll_header?.endRefreshing()
+            self.tableView.reloadData()
         })
         //2.0 Stop refreshing
         tableView.ll_header?.beginRefreshing()

@@ -72,7 +72,7 @@ class LLRefreshNormalHeader: LLRefreshStateHeader {
                     guard self.refreshState == .Normal else {
                         return
                     }
-                    self.loadingView.alpha = 1
+//                    self.loadingView.alpha = 1
                     self.arrowView.hidden = false
                 })
             }else {

@@ -15,25 +15,14 @@ class StateRefreshViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        let footer =  LLRefreshAutoFooter(refreshingBlock: {[weak self] _ in
+        //1.0 Init
+        tableView.ll_header = LLRefreshBGImageHeader(refreshingBlock: {[weak self] _ in
             sleep(2)
-            self?.tableView.ll_footer?.endRefreshing()
+            //3.0 End refreshing
+            self?.tableView.ll_header?.endRefreshing()
         })
-        footer.backgroundColor  = UIColor.brownColor()
-        tableView.ll_footer = footer
-
-        tableView.ll_footer?.beginRefreshing()
-        
-        
-        
-//        //1.0 Init
-//        tableView.ll_header = LLRefreshBGImageHeader(refreshingBlock: {[weak self] _ in
-//            sleep(2)
-//            //3.0 End refreshing
-//            self?.tableView.ll_header?.endRefreshing()
-//        })
-//        2.0 Stop refreshing
-//         tableView.ll_header?.beginRefreshing()
+        //2.0 Stop refreshing
+        tableView.ll_header?.beginRefreshing()
     }
 
 

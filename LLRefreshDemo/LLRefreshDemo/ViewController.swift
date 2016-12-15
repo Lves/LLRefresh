@@ -37,7 +37,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 //        tableView.contentInset = UIEdgeInsetsMake(80, 0, 0, 0)
 //        tableView?.setContentOffset(CGPointMake(0, -80), animated: false)
         
-        dataArray = ["StateRefreshViewController","ArrowViewController"]
+        dataArray = ["StateRefreshViewController","ArrowViewController","FooterNormalTableViewController"]
 
     }
 
@@ -64,10 +64,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
 
         
-        var vc = UIViewController.instanceViewControllerInStoryboardWithName(dataArray?[indexPath.row] ?? "")
-        if indexPath.row == 1 {
-            vc = ArrowViewController()
-        }
+        let vc = UIViewController.instanceViewControllerInStoryboardWithName(dataArray?[indexPath.row] ?? "")
         navigationController?.pushViewController(vc!, animated: true)
     }
 
