@@ -15,7 +15,7 @@ class LLRefreshFooter: LLBaseRefreshHeader {
     
 
     init(refreshingBlock:(()->())?) {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         self.refreshingBlock = refreshingBlock
     }
     
@@ -28,14 +28,14 @@ class LLRefreshFooter: LLBaseRefreshHeader {
         ll_h = LLConstant.FooterHeight
     }
 
-    override func willMoveToSuperview(newSuperview: UIView?) {
-        super.willMoveToSuperview(newSuperview)
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
         if newSuperview != nil {
             if _scrollView is UITableView || _scrollView is UICollectionView {
                 
                 _scrollView?.ll_reloadDataBlock = {[weak self] count in
                     if self?.automaticallyHidden == true {
-                        self?.hidden = count == 0
+                        self?.isHidden = count == 0
                     }
                 }
             }
@@ -45,11 +45,11 @@ class LLRefreshFooter: LLBaseRefreshHeader {
     
     //MARK: Public 
     func resetNoMoreData()  {
-        setState(.Normal)
+        setState(.normal)
     }
     
     func endRefreshingWithNoMoreData() {
-        setState(.NoMoreData)
+        setState(.noMoreData)
     }
     
     

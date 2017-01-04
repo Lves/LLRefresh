@@ -20,27 +20,27 @@ class FooterNormalTableViewController: UITableViewController {
             self?.tableView.ll_footer?.endRefreshing()
             self?.tableView.reloadData()
         })
-        footer.backgroundColor  = UIColor.brownColor()
+        footer.backgroundColor  = UIColor.brown
         tableView.ll_footer = footer
         
         tableView.ll_footer?.beginRefreshing()
     }
 
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return dataArray?.count ?? 0
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell =  tableView.dequeueReusableCellWithIdentifier("Cell")
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell =  tableView.dequeueReusableCell(withIdentifier: "Cell")
         if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
+            cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
         }
         
         cell?.textLabel?.text = "\(indexPath.row)"

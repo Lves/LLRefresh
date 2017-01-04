@@ -10,9 +10,9 @@ import UIKit
 
 class LLRefreshBGImageHeader: LLRefreshNormalHeader {
 
-    private lazy var bgImageView: UIImageView = {
+    fileprivate lazy var bgImageView: UIImageView = {
         let bgImageView = UIImageView(image: UIImage(named:"refresh_bg"))
-        self.insertSubview(bgImageView, atIndex: 0)
+        self.insertSubview(bgImageView, at: 0)
         return bgImageView
     }()
     

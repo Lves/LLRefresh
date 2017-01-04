@@ -7,6 +7,30 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 extension String {
     var ll_length: Int {
@@ -20,8 +44,8 @@ extension UILabel{
         get{
             var width:CGFloat? = 0
             if self.text?.ll_length > 0 {
-                let size = CGSizeMake(CGFloat(MAXFLOAT), CGFloat(MAXFLOAT))
-                width = self.text?.boundingRectWithSize(size, options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName:self.font], context: nil).size.width
+                let size = CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT))
+                width = self.text?.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:self.font], context: nil).size.width
             }
             return width ?? 0
         }

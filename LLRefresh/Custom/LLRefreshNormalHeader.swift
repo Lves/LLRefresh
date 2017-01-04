@@ -10,19 +10,19 @@ import UIKit
 
 
 class LLRefreshNormalHeader: LLRefreshStateHeader {
-    var activityIndicatorViewStyle: UIActivityIndicatorViewStyle = .Gray{
+    var activityIndicatorViewStyle: UIActivityIndicatorViewStyle = .gray{
         didSet{
             setNeedsLayout()
         }
     }
     
-    private lazy var arrowView: UIImageView = {
+    fileprivate lazy var arrowView: UIImageView = {
         let arrowView = UIImageView(image: UIImage(named: "arrow"))
         self.addSubview(arrowView)
         return arrowView
     }()
     
-    private lazy var loadingView: UIActivityIndicatorView = {
+    fileprivate lazy var loadingView: UIActivityIndicatorView = {
         let loadingView = UIActivityIndicatorView(activityIndicatorStyle: self.activityIndicatorViewStyle)
         loadingView.hidesWhenStopped = true
         self.addSubview(loadingView)
@@ -36,19 +36,19 @@ class LLRefreshNormalHeader: LLRefreshStateHeader {
         
        //箭头位置
         var arrowCentereX = ll_w*0.5
-        if !stateLabel.hidden {  //提示问题没有隐藏
+        if !stateLabel.isHidden {  //提示问题没有隐藏
             let stateWidth = stateLabel.ll_textWidth
             var timeWidth:CGFloat = 0
-            if !lastUpdatedTimeLabel.hidden {
+            if !lastUpdatedTimeLabel.isHidden {
                 timeWidth = lastUpdatedTimeLabel.ll_textWidth
             }
             let textWidth = max(stateWidth, timeWidth)
             arrowCentereX -= textWidth/2 + labelLeftInset
         }
         let arrowCenterY = ll_h * 0.5
-        let arrowCenter = CGPointMake(arrowCentereX, arrowCenterY)
+        let arrowCenter = CGPoint(x: arrowCentereX, y: arrowCenterY)
         if arrowView.constraints.count == 0 {
-            arrowView.ll_size = arrowView.image?.size ?? CGSizeZero
+            arrowView.ll_size = arrowView.image?.size ?? CGSize.zero
             arrowView.center = arrowCenter
         }
         // 圈圈
@@ -58,41 +58,41 @@ class LLRefreshNormalHeader: LLRefreshStateHeader {
 
         arrowView.tintColor = stateLabel.textColor
     }
-    override func setState(state: LLRefreshState) {
+    override func setState(_ state: LLRefreshState) {
         let old = refreshState
         super.setState(state)
-        if state == .Normal {
+        if state == .normal {
             
-            if old == .Refreshing {
-                arrowView.transform = CGAffineTransformIdentity
+            if old == .refreshing {
+                arrowView.transform = CGAffineTransform.identity
                 
-                UIView.animateWithDuration(LLConstant.AnimationDuration, animations: {
+                UIView.animate(withDuration: LLConstant.AnimationDuration, animations: {
                     self.loadingView.alpha = 0
                 }, completion: { (finished) in
-                    guard self.refreshState == .Normal else {
+                    guard self.refreshState == .normal else {
                         return
                     }
 //                    self.loadingView.alpha = 1
-                    self.arrowView.hidden = false
+                    self.arrowView.isHidden = false
                 })
             }else {
                 loadingView.stopAnimating()
-                arrowView.hidden = false
-                UIView.animateWithDuration(LLConstant.AnimationDuration, animations: {
-                    self.arrowView.transform = CGAffineTransformIdentity
+                arrowView.isHidden = false
+                UIView.animate(withDuration: LLConstant.AnimationDuration, animations: {
+                    self.arrowView.transform = CGAffineTransform.identity
                 })
             
             }
-        }else if state == .Pulling {
+        }else if state == .pulling {
             loadingView.stopAnimating()
-            arrowView.hidden = false
-            UIView.animateWithDuration(LLConstant.AnimationDuration, animations: {
-                self.arrowView.transform = CGAffineTransformMakeRotation(0.000001-CGFloat(M_PI))
+            arrowView.isHidden = false
+            UIView.animate(withDuration: LLConstant.AnimationDuration, animations: {
+                self.arrowView.transform = CGAffineTransform(rotationAngle: 0.000001-CGFloat(M_PI))
             })
-        }else if state == .Refreshing {
+        }else if state == .refreshing {
             loadingView.alpha = 1
             loadingView.startAnimating()
-            arrowView.hidden = true
+            arrowView.isHidden = true
         }
 
     }

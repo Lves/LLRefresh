@@ -7,23 +7,58 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
 
 class LLRefreshHeader: LLBaseRefreshHeader {
     
     
     ///last update time
-    var lastUpdateTime:NSDate? {
+    var lastUpdateTime:Date? {
         get{
-            return NSUserDefaults.standardUserDefaults().objectForKey(LLConstant.LastUpdateTimeKey) as? NSDate
+            return UserDefaults.standard.object(forKey: LLConstant.LastUpdateTimeKey) as? Date
         }
     }
     var insetTDelta:CGFloat = 0
     
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
     }
     init(refreshingBlock:(()->())?) {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         self.refreshingBlock = refreshingBlock
     }
     
@@ -35,21 +70,21 @@ class LLRefreshHeader: LLBaseRefreshHeader {
     /** 忽略多少scrollView的contentInset的top */
     var ignoredScrollViewContentInsetTop:CGFloat = 0
 
-    override func setState(state:LLRefreshState) {
+    override func setState(_ state:LLRefreshState) {
         let oldValue = refreshState
         guard state != oldValue else {
             return
         }
         super.setState(state)
-        if state == .Normal{
-            if oldValue != LLRefreshState.Refreshing {
+        if state == .normal{
+            if oldValue != LLRefreshState.refreshing {
                 return
             }
             //保存刷新时间
-            NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: LLConstant.LastUpdateTimeKey)
-            NSUserDefaults.standardUserDefaults().synchronize()
+            UserDefaults.standard.set(Date(), forKey: LLConstant.LastUpdateTimeKey)
+            UserDefaults.standard.synchronize()
             // 恢复inset和offset
-            UIView.animateWithDuration(LLConstant.AnimationDuration, animations: {
+            UIView.animate(withDuration: LLConstant.AnimationDuration, animations: {
                 let top = (self._scrollView?.contentInset.top ?? 0) + self.insetTDelta
                 self._scrollView?.contentInset = UIEdgeInsetsMake(top, 0, 0, 0)
             }, completion: { (finished) in
@@ -59,12 +94,12 @@ class LLRefreshHeader: LLBaseRefreshHeader {
                 }
             })
             
-        }else if state == .Refreshing {
-            dispatch_async(dispatch_get_main_queue(), {
-                UIView.animateWithDuration(LLConstant.AnimationDuration, animations: {
+        }else if state == .refreshing {
+            DispatchQueue.main.async(execute: {
+                UIView.animate(withDuration: LLConstant.AnimationDuration, animations: {
                     let top = (self._scrollViewOriginalInset?.top ?? 0) + self.ll_h
                     self._scrollView?.contentInset = UIEdgeInsetsMake(top, 0, 0, 0)
-                    self._scrollView?.setContentOffset(CGPointMake(0, -top), animated: false)
+                    self._scrollView?.setContentOffset(CGPoint(x: 0, y: -top), animated: false)
                 }, completion: { (finished) in
                     self.executeRefreshingCallback()
                 })
@@ -83,9 +118,9 @@ class LLRefreshHeader: LLBaseRefreshHeader {
         ll_h = LLConstant.HeaderHeight
     }
     
-    override func scrollViewContentOffsetDidChange(change: [String : AnyObject]?) {
+    override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey:Any]?) {
         super.scrollViewContentOffsetDidChange(change)
-        if refreshState == .Refreshing {  //正在刷新
+        if refreshState == .refreshing {  //正在刷新
             guard self.window != nil else {
                 return
             }
@@ -113,16 +148,16 @@ class LLRefreshHeader: LLBaseRefreshHeader {
         let normal2pullingOffsetY = happenOffsetY - self.ll_h;
         let pullingPercent = (happenOffsetY - (offsetY ?? 0)) / self.ll_h;
 
-        if (self._scrollView?.dragging == true) { // 如果正在拖拽
+        if (self._scrollView?.isDragging == true) { // 如果正在拖拽
             self._pullingPercent = pullingPercent;
-            if (self.refreshState == .Normal && offsetY < normal2pullingOffsetY) {
+            if (self.refreshState == .normal && offsetY < normal2pullingOffsetY) {
                 // 转为即将刷新状态
-                self.setState(.Pulling)
-            } else if (self.refreshState == .Pulling && offsetY >= normal2pullingOffsetY) {
+                self.setState(.pulling)
+            } else if (self.refreshState == .pulling && offsetY >= normal2pullingOffsetY) {
                 // 转为普通状态
-                self.setState(.Normal)
+                self.setState(.normal)
             }
-        } else if (self.refreshState == .Pulling) {// 即将刷新 && 手松开
+        } else if (self.refreshState == .pulling) {// 即将刷新 && 手松开
             // 开始刷新
             beginRefreshing()
         } else if (pullingPercent < 1) {
@@ -132,8 +167,8 @@ class LLRefreshHeader: LLBaseRefreshHeader {
 
     //MARK: - public
     override func endRefreshing()  {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.setState(.Normal)
+        DispatchQueue.main.async(execute: {
+            self.setState(.normal)
         })
     }
     

@@ -13,24 +13,24 @@ import UIKit
 struct LLConstant {
     static let HeaderHeight:CGFloat = 54
     static let FooterHeight:CGFloat = 44.0
-    static let AnimationDuration:NSTimeInterval = 0.4
+    static let AnimationDuration:TimeInterval = 0.4
     static let LastUpdateTimeKey:String = "RefreshHeaderLastUpdatedTimeKey"
     static let RefreshLabelLeftInset:CGFloat = 25
 }
 
 
 enum LLRefreshState:Int {
-    case Normal
-    case Pulling
-    case Refreshing
-    case WillRefresh
-    case NoMoreData
+    case normal
+    case pulling
+    case refreshing
+    case willRefresh
+    case noMoreData
 }
 
 class LLBaseRefreshHeader: UIView {
     var panGesture:UIPanGestureRecognizer?
     
-    var refreshState:LLRefreshState = .Normal
+    var refreshState:LLRefreshState = .normal
     ///下拉百分比
     var _pullingPercent:CGFloat = 0 {
         didSet{
@@ -41,7 +41,7 @@ class LLBaseRefreshHeader: UIView {
         }
     }
     var isRefreshing:Bool{
-        return refreshState == .Refreshing || refreshState == .WillRefresh
+        return refreshState == .refreshing || refreshState == .willRefresh
     }
     ///ScrollView起始位置
     var _scrollViewOriginalInset:UIEdgeInsets?
@@ -61,17 +61,17 @@ class LLBaseRefreshHeader: UIView {
         super.init(frame: frame)
         
         prepare()
-        self.setState(.Normal)
+        self.setState(.normal)
     }
     override func layoutSubviews() {
         placeSubViews()
         super.layoutSubviews()
         
     }
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
-        if refreshState == .WillRefresh {
-            setState(.Refreshing)
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        if refreshState == .willRefresh {
+            setState(.refreshing)
         }
     }
     
@@ -84,8 +84,8 @@ class LLBaseRefreshHeader: UIView {
         
     }
     
-    override func willMoveToSuperview(newSuperview: UIView?) {
-        super.willMoveToSuperview(newSuperview)
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
         
         
         if let scrollView = newSuperview as? UIScrollView {
@@ -98,57 +98,57 @@ class LLBaseRefreshHeader: UIView {
             _scrollViewOriginalInset = _scrollView?.contentInset
             
             
-            scrollView.addObserver(self, forKeyPath: "contentOffset", options: [NSKeyValueObservingOptions.New , NSKeyValueObservingOptions.Old], context: nil)
-            scrollView.addObserver(self, forKeyPath: "contentSize", options: [NSKeyValueObservingOptions.New , NSKeyValueObservingOptions.Old], context: nil)
+            scrollView.addObserver(self, forKeyPath: "contentOffset", options: [NSKeyValueObservingOptions.new , NSKeyValueObservingOptions.old], context: nil)
+            scrollView.addObserver(self, forKeyPath: "contentSize", options: [NSKeyValueObservingOptions.new , NSKeyValueObservingOptions.old], context: nil)
             
             self.panGesture = _scrollView?.panGestureRecognizer
-            self.panGesture?.addObserver(self, forKeyPath: "state", options: [NSKeyValueObservingOptions.New , NSKeyValueObservingOptions.Old], context: nil)
+            self.panGesture?.addObserver(self, forKeyPath: "state", options: [NSKeyValueObservingOptions.new , NSKeyValueObservingOptions.old], context: nil)
             
             
         }
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
-        guard userInteractionEnabled else {
+        guard isUserInteractionEnabled else {
             return
         }
         if keyPath == "contentSize" {
-            scrollViewContentSizeDidChange(change)
+            scrollViewContentSizeDidChange(change as [NSKeyValueChangeKey : Any]?)
         }
-        guard !hidden else {
+        guard !isHidden else {
             return
         }
         if keyPath == "contentOffset" {
-            scrollViewContentOffsetDidChange(change)
+            scrollViewContentOffsetDidChange(change as [NSKeyValueChangeKey : Any]?)
         }else if keyPath == "state" {
-            scrollViewPanStateDidChange(change)
+            scrollViewPanStateDidChange(change as [NSKeyValueChangeKey : Any]?)
         }
     }
     //MARK: 子类实现
-    func scrollViewContentSizeDidChange(change:[String:AnyObject]?){ }
-    func scrollViewContentOffsetDidChange(change:[String:AnyObject]?){ }
-    func scrollViewPanStateDidChange(change:[String:AnyObject]?){ }
+    func scrollViewContentSizeDidChange(_ change:[NSKeyValueChangeKey:Any]?){ }
+    func scrollViewContentOffsetDidChange(_ change:[NSKeyValueChangeKey:Any]?){ }
+    func scrollViewPanStateDidChange(_ change:[NSKeyValueChangeKey:Any]?){ }
     
     //MARK: - public
     
     func beginRefreshing()  {
-        UIView.animateWithDuration(0.4, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
             self.alpha = 1.0
         })
         _pullingPercent = 1.0
         if (self.window != nil) {
-            self.setState(.Refreshing)
+            self.setState(.refreshing)
         }else {
-            if refreshState != .Refreshing {
-                self.setState(.WillRefresh)
+            if refreshState != .refreshing {
+                self.setState(.willRefresh)
                 setNeedsDisplay()
             }
         }
         
     }
     func endRefreshing()  {
-        self.setState(.Normal)
+        self.setState(.normal)
     }
     
     //MARK: - private
@@ -156,7 +156,7 @@ class LLBaseRefreshHeader: UIView {
     }
     
     func executeRefreshingCallback() {
-        dispatch_async(dispatch_get_main_queue(), {[weak self] _ in
+        DispatchQueue.main.async(execute: {[weak self] _ in
             if let refreshingBlock = self?.refreshingBlock {
                 refreshingBlock()
             }
@@ -168,15 +168,15 @@ class LLBaseRefreshHeader: UIView {
     
     
     func prepare(){
-        autoresizingMask = .FlexibleWidth
-        backgroundColor = UIColor.clearColor()
+        autoresizingMask = .flexibleWidth
+        backgroundColor = UIColor.clear
     }
     func updateUI()  {
-        dispatch_async(dispatch_get_main_queue()) { [weak self] _ in
+        DispatchQueue.main.async { [weak self] _ in
             self?.setNeedsLayout()
         }
     }
-    func setState(state:LLRefreshState) {
+    func setState(_ state:LLRefreshState) {
         refreshState = state
         print("state -> \(state)")
         updateUI()

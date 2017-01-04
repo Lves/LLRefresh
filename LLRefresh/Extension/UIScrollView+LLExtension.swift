@@ -12,12 +12,12 @@ var LLRefreshHeaderKey = "\0"
 var LLRefreshFooterKey = "\0"
 var LLRefreshReloadDataBlockKey = "\0"
 
-typealias VoidBlock = (count: Int?)->(Void)
+typealias VoidBlock = (_ count: Int?)->(Void)
 
 class LLObjectWrapper: NSObject {
-    let value: ((count: Int?) -> Void)?
+    let value: ((_ count: Int?) -> Void)?
     
-    init(value: (count: Int?) -> Void) {
+    init(value: @escaping (_ count: Int?) -> Void) {
         self.value = value
     }
 }
@@ -27,11 +27,11 @@ extension UIScrollView {
         set{
             if newValue != ll_header {
                 self.ll_header?.removeFromSuperview()
-                self.insertSubview(newValue!, atIndex: 0)
+                self.insertSubview(newValue!, at: 0)
                 //存储
-                self.willChangeValueForKey("ll_header")
+                self.willChangeValue(forKey: "ll_header")
                 objc_setAssociatedObject(self, &LLRefreshHeaderKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
-                self.didChangeValueForKey("ll_header")
+                self.didChangeValue(forKey: "ll_header")
             }
             
         }
@@ -45,11 +45,11 @@ extension UIScrollView {
         set{
             if newValue != ll_footer {
                 self.ll_footer?.removeFromSuperview()
-                self.insertSubview(newValue!, atIndex: 0)
+                self.insertSubview(newValue!, at: 0)
                 //存储
-                self.willChangeValueForKey("ll_footer")
+                self.willChangeValue(forKey: "ll_footer")
                 objc_setAssociatedObject(self, &LLRefreshFooterKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
-                self.didChangeValueForKey("ll_footer")
+                self.didChangeValue(forKey: "ll_footer")
             }
             
         }
@@ -61,11 +61,11 @@ extension UIScrollView {
     
     var ll_reloadDataBlock:VoidBlock? {
         set{
-            self.willChangeValueForKey("ll_reloadDataBlock")
+            self.willChangeValue(forKey: "ll_reloadDataBlock")
             let wrapper = LLObjectWrapper(value: newValue!)
             objc_setAssociatedObject(self, &LLRefreshReloadDataBlockKey, wrapper, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             
-            self.didChangeValueForKey("ll_reloadDataBlock")
+            self.didChangeValue(forKey: "ll_reloadDataBlock")
         }
         get{
             let wrapper:LLObjectWrapper? = objc_getAssociatedObject(self, &LLRefreshReloadDataBlockKey) as? LLObjectWrapper

@@ -11,11 +11,11 @@ import UIKit
 
 
 extension UIViewController{
-    class func instanceViewControllerInStoryboardWithName(name: String, storyboardName: String? = "Main") -> UIViewController? {
-        if let storyboardName = storyboardName where storyboardName.ll_length > 0 {
+    class func instanceViewControllerInStoryboardWithName(_ name: String, storyboardName: String? = "Main") -> UIViewController? {
+        if let storyboardName = storyboardName, storyboardName.ll_length > 0 {
             let story =  UIStoryboard(name: storyboardName, bundle: nil)
-            if story.valueForKey("identifierToNibNameMap")?.objectForKey(name) != nil {
-                return story.instantiateViewControllerWithIdentifier(name)
+            if (story.value(forKey: "identifierToNibNameMap") as AnyObject).object(forKey: name) != nil {
+                return story.instantiateViewController(withIdentifier: name)
             }
         }
         return nil
@@ -44,24 +44,24 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     //MARK: delegate&datasource
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray?.count ?? 0
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell =  tableView.dequeueReusableCellWithIdentifier("RootCell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell =  tableView.dequeueReusableCell(withIdentifier: "RootCell")
         if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: "RootCell")
+            cell = UITableViewCell(style: .default, reuseIdentifier: "RootCell")
         }
         
         cell?.textLabel?.text = dataArray?[indexPath.row]
         return cell!
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
 
         
         let vc = UIViewController.instanceViewControllerInStoryboardWithName(dataArray?[indexPath.row] ?? "")

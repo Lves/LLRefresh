@@ -7,25 +7,49 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 
 class LLRefreshAutoFooter: LLRefreshFooter {
     var triggerAutomaticallyRefreshPercent:CGFloat = 0
     var automaticallyRefresh:Bool = true
     
     
-    override func willMoveToSuperview(newSuperview: UIView?) {
-        super.willMoveToSuperview(newSuperview)
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
         
         
         if (newSuperview != nil) {
-            if !hidden {
-                let inset = _scrollView?.contentInset ?? UIEdgeInsetsZero
+            if !isHidden {
+                let inset = _scrollView?.contentInset ?? UIEdgeInsets.zero
                 _scrollView?.contentInset = UIEdgeInsetsMake(inset.top, inset.left, inset.bottom+ll_h, inset.right)
             }
             ll_y = _scrollView?.ll_contentH ?? 0
         }else {
-            if !hidden {
-                let inset = _scrollView?.contentInset ?? UIEdgeInsetsZero
+            if !isHidden {
+                let inset = _scrollView?.contentInset ?? UIEdgeInsets.zero
                 _scrollView?.contentInset = UIEdgeInsetsMake(inset.top, inset.left, inset.bottom-ll_h, inset.right)
             }
         }
@@ -37,14 +61,14 @@ class LLRefreshAutoFooter: LLRefreshFooter {
         triggerAutomaticallyRefreshPercent = 1.0
         
     }
-    override func scrollViewContentSizeDidChange(change: [String : AnyObject]?) {
+    override func scrollViewContentSizeDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         super.scrollViewContentSizeDidChange(change)
         ll_y = _scrollView?.ll_contentH ?? 0 //改变位置
     }
-    override func scrollViewContentOffsetDidChange(change: [String : AnyObject]?) {
+    override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         super.scrollViewContentOffsetDidChange(change)
         
-        if refreshState != .Normal || automaticallyRefresh == false || ll_y == 0 {
+        if refreshState != .normal || automaticallyRefresh == false || ll_y == 0 {
             return
         }
         
@@ -57,8 +81,10 @@ class LLRefreshAutoFooter: LLRefreshFooter {
             // 这里的_scrollView.mj_contentH替换掉self.mj_y更为合理
             if (scrollView.ll_offsetY >= scrollView.ll_contentH - scrollView.ll_h + self.ll_h * self.triggerAutomaticallyRefreshPercent + scrollView.contentInset.bottom - self.ll_h) {
                 // 防止手松开时连续调用
-                let old = change?["old"]?.CGPointValue()
-                let new = change?["new"]?.CGPointValue()
+                let old = change?[NSKeyValueChangeKey.oldKey] as? CGPoint
+                let new = change?[NSKeyValueChangeKey.newKey] as? CGPoint
+////              let old = change?["old"]?.cgPointValue
+//                let new = change?["new"]?.cgPointValue
                 if new?.y <= old?.y {
                     return
                 }
@@ -69,17 +95,17 @@ class LLRefreshAutoFooter: LLRefreshFooter {
         }
         
     }
-    override func scrollViewPanStateDidChange(change: [String : AnyObject]?) {
+    override func scrollViewPanStateDidChange(_ change: [NSKeyValueChangeKey:Any]?) {
         super.scrollViewPanStateDidChange(change)
         
-        if refreshState != .Normal {
+        if refreshState != .normal {
             return
         }
         guard let scrollView = _scrollView else {
             return
         }
         
-        if scrollView.panGestureRecognizer.state == .Ended { //手松开
+        if scrollView.panGestureRecognizer.state == .ended { //手松开
             if (scrollView.contentInset.top + scrollView.ll_contentH <= scrollView.ll_h) {  // 不够一个屏幕
                 if (scrollView.contentOffset.y >= -scrollView.contentInset.top) { // 向上拽
                     beginRefreshing()
@@ -93,21 +119,21 @@ class LLRefreshAutoFooter: LLRefreshFooter {
         
     }
     
-    override func setState(state: LLRefreshState) {
+    override func setState(_ state: LLRefreshState) {
         let oldValue = refreshState
         guard state != oldValue else {
             return
         }
         super.setState(state)
         
-        if state == .Refreshing {
-            let t = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5*Double(NSEC_PER_SEC)))
-            dispatch_after(t, dispatch_get_main_queue(), { 
+        if state == .refreshing {
+            let t = DispatchTime.now() + Double(Int64(0.5*Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: t, execute: { 
                 self.executeRefreshingCallback()
             })
             
-        }else if state == .NoMoreData || state == .Normal {
-            if oldValue == .Refreshing {
+        }else if state == .noMoreData || state == .normal {
+            if oldValue == .refreshing {
                 if let endRefreshingCompletionBlock = endRefreshingCompletionBlock {
                     endRefreshingCompletionBlock()
                 }
@@ -115,16 +141,16 @@ class LLRefreshAutoFooter: LLRefreshFooter {
         }
     }
     
-    override var hidden: Bool {
+    override var isHidden: Bool {
         get {
-            return super.hidden
+            return super.isHidden
         }
         set(v) {
-            let oldValue = super.hidden
-            super.hidden = v
+            let oldValue = super.isHidden
+            super.isHidden = v
             
             if oldValue == false && v {
-                setState(.Normal)
+                setState(.normal)
                 var content = _scrollView?.contentInset
                 content?.bottom -= ll_h
                 _scrollView?.contentInset = content!
