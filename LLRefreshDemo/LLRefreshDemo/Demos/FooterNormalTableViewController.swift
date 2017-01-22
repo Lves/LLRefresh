@@ -14,7 +14,7 @@ class FooterNormalTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        let footer =  LLRefreshAutoStateFooter(refreshingBlock: {[weak self] _ in
+        let footer =  LLRefreshAutoNormalFooter(refreshingBlock: {[weak self] _ in
             sleep(2)
             self?.dataArray?.append(1)
             self?.tableView.ll_footer?.endRefreshing()
