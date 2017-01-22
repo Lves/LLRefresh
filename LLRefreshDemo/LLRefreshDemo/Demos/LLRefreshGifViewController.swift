@@ -29,6 +29,8 @@ class LLRefreshGifViewController: UIViewController {
             self.tableView.ll_header?.endRefreshing()
             self.tableView.reloadData()
         })
+        header.stateLabel.isHidden = true
+        header.lastUpdatedTimeLabel.isHidden = true
         tableView.ll_header = header
         //2.0 Stop refreshing
         tableView.ll_header?.beginRefreshing()

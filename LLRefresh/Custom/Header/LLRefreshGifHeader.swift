@@ -33,7 +33,6 @@ class LLRefreshGifHeader: LLRefreshStateHeader {
             if index >= (images?.count)! {
                 index = (images?.count)! - 1
             }
-            print("_pullingPercent: \(_pullingPercent) - imageIndex: \(index)")
             self.gifView.image = images?[index]
         }
     }
