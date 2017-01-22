@@ -27,10 +27,27 @@ class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
     override func prepare() {
         super.prepare()
         
-        setTitle("下拉可以刷新", state: .normal)
-        setTitle("松开立即刷新", state: .pulling)
-        setTitle("正在刷新数据中", state: .refreshing)
+        setTitle("点击或上拉加载更多", state: .normal)
+        setTitle("正在加载更多的数据...", state: .refreshing)
+        setTitle("已经全部加载完毕", state: .noMoreData)
+        stateLabel.isUserInteractionEnabled = true
+        stateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(stateLabelClick)))
         
+    }
+    override func setState(_ state: LLRefreshState) {
+        super.setState(state)
+        
+        if refreshingTitleHidden && state == .refreshing{
+            stateLabel.text = nil
+        }
+        stateLabel.text = stateTitles[refreshState.rawValue]
+    }
+    override func placeSubViews() {
+        super.placeSubViews()
+        guard stateLabel.constraints.count == 0 else{
+            return
+        }
+        stateLabel.frame = self.bounds
         
     }
     
@@ -41,6 +58,7 @@ class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
             beginRefreshing()
         }
     }
+    
     
     
     //MARK: - Public

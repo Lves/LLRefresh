@@ -14,13 +14,13 @@ class FooterNormalTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        let footer =  LLRefreshAutoFooter(refreshingBlock: {[weak self] _ in
+        let footer =  LLRefreshAutoStateFooter(refreshingBlock: {[weak self] _ in
             sleep(2)
             self?.dataArray?.append(1)
             self?.tableView.ll_footer?.endRefreshing()
             self?.tableView.reloadData()
         })
-        footer.backgroundColor  = UIColor.brown
+        footer.backgroundColor  = UIColor.clear
         tableView.ll_footer = footer
         
         tableView.ll_footer?.beginRefreshing()
