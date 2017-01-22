@@ -52,10 +52,13 @@ self.tableView.ll_header?.beginRefreshing()
 
 ![normal](https://github.com/Lves/LLRefresh/blob/master/Docs/123.png)
 
-1. Refresh header with BgImage
+2. Refresh header with BgImage
 
 ![bgheader](https://github.com/Lves/LLRefresh/blob/master/Docs/234.png)
 
+3. Refresh header with Gif
+
+![bgheader](https://github.com/Lves/LLRefresh/blob/master/Docs/QQLLRefresh_gif.gif)
 
 
 
