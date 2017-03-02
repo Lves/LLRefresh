@@ -35,6 +35,22 @@ class LLRefreshGifViewController: UIViewController {
         //2.0 Stop refreshing
         tableView.ll_header?.beginRefreshing()
         
+        //footer
+        let footer = LLEatFooter { 
+            sleep(2)
+            let count = self.array.count
+            for index in count..<count+5 {
+                self.array.append(index)
+            }
+
+            self.tableView.ll_footer?.endRefreshing()
+            self.tableView.reloadData()
+        }
+        tableView.ll_footer = footer
+        
+        
+        
+        
         self.view.addSubview(tableView)
         
     }
