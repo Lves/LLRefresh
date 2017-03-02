@@ -28,9 +28,12 @@ enum LLRefreshState:Int {
 }
 
 class LLBaseRefreshHeader: UIView {
+    //父控件
+    weak var _scrollView:UIScrollView?
+    //手势
     var panGesture:UIPanGestureRecognizer?
-    
-    var refreshState:LLRefreshState = .normal
+    ///ScrollView起始位置
+    var _scrollViewOriginalInset:UIEdgeInsets?
     ///下拉百分比
     var _pullingPercent:CGFloat = 0 {
         didSet{
@@ -40,20 +43,20 @@ class LLBaseRefreshHeader: UIView {
             //修改透明度
         }
     }
+    
+    
     var isRefreshing:Bool{
         return refreshState == .refreshing || refreshState == .willRefresh
     }
-    ///ScrollView起始位置
-    var _scrollViewOriginalInset:UIEdgeInsets?
-    
-    
-    //父控件
-    weak var _scrollView:UIScrollView?
-    
+    //状态
+    var refreshState:LLRefreshState = .normal
     
     var refreshingBlock:(()->())?
     var beginRefreshingCompletionBlock:(()->())?
     var endRefreshingCompletionBlock:(()->())?
+    
+    var refreshingTarget:AnyObject?
+    var refreshingAction:Selector?
     
     
 
@@ -145,10 +148,14 @@ class LLBaseRefreshHeader: UIView {
                 setNeedsDisplay()
             }
         }
-        
     }
     func endRefreshing()  {
         self.setState(.normal)
+    }
+    
+    func setRefrshing(target:AnyObject, action:Selector){
+        self.refreshingTarget = target
+        self.refreshingAction = action
     }
     
     //MARK: - private
@@ -160,10 +167,17 @@ class LLBaseRefreshHeader: UIView {
             if let refreshingBlock = self?.refreshingBlock {
                 refreshingBlock()
             }
+
+            
+            if self?.refreshingTarget?.responds(to: self?.refreshingAction) == true{
+                self?.refreshingTarget?.perform(self?.refreshingAction)
+               
+            }
+            
             if let beginRefreshingCompletionBlock = self?.beginRefreshingCompletionBlock {
                 beginRefreshingCompletionBlock()
             }
-            })
+        })
     }
     
     

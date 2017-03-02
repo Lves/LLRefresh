@@ -61,6 +61,16 @@ class LLRefreshHeader: LLBaseRefreshHeader {
         super.init(frame: CGRect.zero)
         self.refreshingBlock = refreshingBlock
     }
+    init(target:AnyObject , action: Selector){
+        super.init(frame: CGRect.zero)
+        self.setRefrshing(target: target, action: action)
+        
+    }
+    class func header(target:AnyObject , action: Selector) -> LLRefreshHeader{
+        let header = LLRefreshHeader()
+        header.setRefrshing(target: target, action: action)
+        return header
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
