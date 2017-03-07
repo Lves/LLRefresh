@@ -32,18 +32,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        
 
-//        tableView.contentInset = UIEdgeInsetsMake(80, 0, 0, 0)
-//        tableView?.setContentOffset(CGPointMake(0, -80), animated: false)
-        
-        dataArray = ["StateRefreshViewController","ArrowViewController","FooterNormalTableViewController","LLRefreshGifViewController"]
-
+        dataArray = ["StateRefreshViewController","NormalRefreshViewController","GifRefreshViewController"]
     }
-
-
     //MARK: delegate&datasource
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -63,7 +55,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
 
-        
         let vc = UIViewController.instanceViewControllerInStoryboardWithName(dataArray?[indexPath.row] ?? "")
         navigationController?.pushViewController(vc!, animated: true)
     }

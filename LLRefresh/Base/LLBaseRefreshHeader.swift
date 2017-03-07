@@ -173,7 +173,6 @@ class LLBaseRefreshHeader: UIView {
                 self?.refreshingTarget?.perform(self?.refreshingAction)
                
             }
-            
             if let beginRefreshingCompletionBlock = self?.beginRefreshingCompletionBlock {
                 beginRefreshingCompletionBlock()
             }

@@ -1,44 +1,45 @@
 //
-//  StateRefreshViewController.swift
+//  GifRefreshViewController.swift
 //  LLRefreshDemo
 //
-//  Created by 李兴乐 on 2016/12/3.
-//  Copyright © 2016年 com.lvesli. All rights reserved.
+//  Created by lixingle on 2017/3/7.
+//  Copyright © 2017年 com.lvesli. All rights reserved.
 //
 
 import UIKit
 
-class StateRefreshViewController: UIViewController {
-     @IBOutlet weak var tableView: UITableView!
-    var dataArray:[String] = []
+class GifRefreshViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    var dataArray:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-
+        
         //1.0 set header & footer by block
-//        setRefreshByBlock()
+        setRefreshByBlock()
         //2.0 set header & footer by target
-        setRefreshByTarget()
+        //        setRefreshByTarget()
         tableView.ll_header?.beginRefreshing()
         
     }
     
     //MARK: Block实现方式
     func setRefreshByBlock(){
-        //1.0 
-        tableView.ll_header = LLRefreshStateHeader(refreshingBlock: {[weak self] _ in
-           self?.loadNewData()
+        //1.0
+        tableView.ll_header = LLEatHeader(refreshingBlock: {[weak self] _ in
+            self?.loadNewData()
         })
-        tableView.ll_footer = LLRefreshAutoStateFooter(refreshingBlock: { [weak self] _ in
+        tableView.ll_footer = LLEatFooter(refreshingBlock: { [weak self] _ in
             self?.loadMoreDate()
         })
     }
     
     //MARK: Target实现方式
     func setRefreshByTarget(){
-        tableView.ll_header = LLRefreshStateHeader(target: self, action: #selector(loadNewData))
-        tableView.ll_footer = LLRefreshAutoStateFooter(target: self, action: #selector(loadMoreDate))
+        tableView.ll_header = LLEatHeader(target: self, action: #selector(loadNewData))
+        tableView.ll_footer = LLEatFooter(target: self, action: #selector(loadMoreDate))
     }
     func loadNewData()  {
         //update data
@@ -64,7 +65,7 @@ class StateRefreshViewController: UIViewController {
         tableView.ll_footer?.endRefreshing()
         tableView.reloadData()
     }
-
+    
     // MARK: - Table view data source
     func numberOfSectionsInTableView(_ tableView: UITableView) -> Int {
         return 1
@@ -77,11 +78,10 @@ class StateRefreshViewController: UIViewController {
         if cell == nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
         }
-
+        
         cell?.textLabel?.text = dataArray[indexPath.row]
         return cell!
     }
-
 
 
 }

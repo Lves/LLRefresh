@@ -95,39 +95,10 @@
             </objects>
             <point key="canvasLocation" x="1746" y="-387"/>
         </scene>
-        <!--Footer Normal Table View Controller-->
-        <scene sceneID="Nw1-Ax-Em4">
-            <objects>
-                <tableViewController storyboardIdentifier="FooterNormalTableViewController" id="fEi-sj-HTQ" customClass="FooterNormalTableViewController" customModule="LLRefreshDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="r0J-c1-1Al">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TnK-ou-fvu">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TnK-ou-fvu" id="t8z-CX-p1Y">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="fEi-sj-HTQ" id="lek-wU-hvU"/>
-                            <outlet property="delegate" destination="fEi-sj-HTQ" id="wPf-Dr-Yvs"/>
-                        </connections>
-                    </tableView>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8OZ-hh-Trk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1064" y="305"/>
-        </scene>
-        <!--Arrow View Controller-->
+        <!--Normal Refresh View Controller-->
         <scene sceneID="gSB-qN-HYH">
             <objects>
-                <viewController storyboardIdentifier="ArrowViewController" automaticallyAdjustsScrollViewInsets="NO" id="taN-lk-tdj" customClass="ArrowViewController" customModule="LLRefreshDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NormalRefreshViewController" automaticallyAdjustsScrollViewInsets="NO" id="taN-lk-tdj" customClass="NormalRefreshViewController" customModule="LLRefreshDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zWb-hN-Y8B"/>
                         <viewControllerLayoutGuide type="bottom" id="eJs-z8-f0M"/>
@@ -162,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="1744.8" y="278.41079460269867"/>
         </scene>
-        <!--Refresh Gif View Controller-->
+        <!--Gif Refresh View Controller-->
         <scene sceneID="3tU-BI-iYX">
             <objects>
-                <viewController storyboardIdentifier="LLRefreshGifViewController" id="50U-K7-diu" customClass="LLRefreshGifViewController" customModule="LLRefreshDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GifRefreshViewController" id="50U-K7-diu" customClass="GifRefreshViewController" customModule="LLRefreshDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KB8-7J-B98"/>
                         <viewControllerLayoutGuide type="bottom" id="bB0-Af-ZJa"/>

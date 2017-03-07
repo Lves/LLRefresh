@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6C069A0A1E344FDC001A0C51 /* LLRefreshAutoNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C069A091E344FDC001A0C51 /* LLRefreshAutoNormalFooter.swift */; };
-		6C069A0C1E345EF0001A0C51 /* LLRefreshGifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C069A0B1E345EF0001A0C51 /* LLRefreshGifViewController.swift */; };
 		6C069A0E1E347D60001A0C51 /* LLRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C069A0D1E347D60001A0C51 /* LLRefreshGifHeader.swift */; };
 		6C069A131E34865F001A0C51 /* LLEatHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C069A121E34865F001A0C51 /* LLEatHeader.swift */; };
 		6C27FA021E000BC100E427E7 /* LLRefreshAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C27FA011E000BC100E427E7 /* LLRefreshAutoFooter.swift */; };
@@ -24,15 +23,15 @@
 		6C2DF90E1DF2DB0C00202268 /* UIScrollView+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2DF9091DF2DB0C00202268 /* UIScrollView+LLExtension.swift */; };
 		6C2DF90F1DF2DB0C00202268 /* UIView+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2DF90A1DF2DB0C00202268 /* UIView+LLExtension.swift */; };
 		6C2DF9121DF2DE2F00202268 /* StateRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2DF9111DF2DE2F00202268 /* StateRefreshViewController.swift */; };
-		6C3E651F1DF57A29004832AD /* ArrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3E651E1DF57A29004832AD /* ArrowViewController.swift */; };
 		6C4F3E161E67F15300446C84 /* LLRefreshAutoGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4F3E151E67F15300446C84 /* LLRefreshAutoGifFooter.swift */; };
 		6C4F3E181E67F69400446C84 /* LLEatFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4F3E171E67F69400446C84 /* LLEatFooter.swift */; };
-		6C68579D1E02AC600004C1DB /* FooterNormalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68579C1E02AC600004C1DB /* FooterNormalTableViewController.swift */; };
 		6C7A9F671DF81FE2009FFE1C /* UILabel+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7A9F661DF81FE2009FFE1C /* UILabel+LLExtension.swift */; };
 		6C83D1A01E344BC200C79DEF /* LLRefreshAutoStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C83D19B1E344BC200C79DEF /* LLRefreshAutoStateFooter.swift */; };
-		6C83D1A11E344BC200C79DEF /* LLRefreshBGImageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C83D19D1E344BC200C79DEF /* LLRefreshBGImageHeader.swift */; };
 		6C83D1A21E344BC200C79DEF /* LLRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C83D19E1E344BC200C79DEF /* LLRefreshNormalHeader.swift */; };
 		6C83D1A31E344BC200C79DEF /* LLRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C83D19F1E344BC200C79DEF /* LLRefreshStateHeader.swift */; };
+		6C9624FA1E6EAEE4005D4A18 /* NormalRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9624F91E6EAEE4005D4A18 /* NormalRefreshViewController.swift */; };
+		6C9624FC1E6EAFCF005D4A18 /* GifRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9624FB1E6EAFCF005D4A18 /* GifRefreshViewController.swift */; };
+		6C9624FE1E6EB087005D4A18 /* LLRefreshBGImageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9624FD1E6EB087005D4A18 /* LLRefreshBGImageHeader.swift */; };
 		6CCB35DC1DFEBE54002CB3D3 /* LLRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB35DB1DFEBE54002CB3D3 /* LLRefreshFooter.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		6C069A091E344FDC001A0C51 /* LLRefreshAutoNormalFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoNormalFooter.swift; sourceTree = "<group>"; };
-		6C069A0B1E345EF0001A0C51 /* LLRefreshGifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshGifViewController.swift; sourceTree = "<group>"; };
 		6C069A0D1E347D60001A0C51 /* LLRefreshGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshGifHeader.swift; sourceTree = "<group>"; };
 		6C069A121E34865F001A0C51 /* LLEatHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLEatHeader.swift; sourceTree = "<group>"; };
 		6C27FA011E000BC100E427E7 /* LLRefreshAutoFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoFooter.swift; sourceTree = "<group>"; };
@@ -77,15 +75,16 @@
 		6C2DF9091DF2DB0C00202268 /* UIScrollView+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+LLExtension.swift"; sourceTree = "<group>"; };
 		6C2DF90A1DF2DB0C00202268 /* UIView+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LLExtension.swift"; sourceTree = "<group>"; };
 		6C2DF9111DF2DE2F00202268 /* StateRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateRefreshViewController.swift; sourceTree = "<group>"; };
-		6C3E651E1DF57A29004832AD /* ArrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowViewController.swift; sourceTree = "<group>"; };
 		6C4F3E151E67F15300446C84 /* LLRefreshAutoGifFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoGifFooter.swift; sourceTree = "<group>"; };
 		6C4F3E171E67F69400446C84 /* LLEatFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLEatFooter.swift; sourceTree = "<group>"; };
-		6C68579C1E02AC600004C1DB /* FooterNormalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterNormalTableViewController.swift; sourceTree = "<group>"; };
 		6C7A9F661DF81FE2009FFE1C /* UILabel+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+LLExtension.swift"; sourceTree = "<group>"; };
 		6C83D19B1E344BC200C79DEF /* LLRefreshAutoStateFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoStateFooter.swift; sourceTree = "<group>"; };
-		6C83D19D1E344BC200C79DEF /* LLRefreshBGImageHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshBGImageHeader.swift; sourceTree = "<group>"; };
 		6C83D19E1E344BC200C79DEF /* LLRefreshNormalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshNormalHeader.swift; sourceTree = "<group>"; };
 		6C83D19F1E344BC200C79DEF /* LLRefreshStateHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshStateHeader.swift; sourceTree = "<group>"; };
+		6C9624F51E6EAECB005D4A18 /* LLRefreshDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LLRefreshDemo-Bridging-Header.h"; path = "Demos/LLRefreshDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		6C9624F91E6EAEE4005D4A18 /* NormalRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalRefreshViewController.swift; sourceTree = "<group>"; };
+		6C9624FB1E6EAFCF005D4A18 /* GifRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifRefreshViewController.swift; sourceTree = "<group>"; };
+		6C9624FD1E6EB087005D4A18 /* LLRefreshBGImageHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshBGImageHeader.swift; sourceTree = "<group>"; };
 		6CCB35DB1DFEBE54002CB3D3 /* LLRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshFooter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +116,7 @@
 		6C069A111E34863F001A0C51 /* Customer */ = {
 			isa = PBXGroup;
 			children = (
+				6C9624FD1E6EB087005D4A18 /* LLRefreshBGImageHeader.swift */,
 				6C069A121E34865F001A0C51 /* LLEatHeader.swift */,
 				6C4F3E171E67F69400446C84 /* LLEatFooter.swift */,
 			);
@@ -150,6 +150,7 @@
 				6C2DF9101DF2DDA800202268 /* Demos */,
 				6C2DF8D31DF2DAE600202268 /* AppDelegate.swift */,
 				6C2DF8D51DF2DAE600202268 /* ViewController.swift */,
+				6C9624F51E6EAECB005D4A18 /* LLRefreshDemo-Bridging-Header.h */,
 				6C2DF8D71DF2DAE600202268 /* Main.storyboard */,
 				6C2DF8DA1DF2DAE600202268 /* Assets.xcassets */,
 				6C2DF8DC1DF2DAE600202268 /* LaunchScreen.storyboard */,
@@ -222,9 +223,8 @@
 			children = (
 				6C069A111E34863F001A0C51 /* Customer */,
 				6C2DF9111DF2DE2F00202268 /* StateRefreshViewController.swift */,
-				6C3E651E1DF57A29004832AD /* ArrowViewController.swift */,
-				6C68579C1E02AC600004C1DB /* FooterNormalTableViewController.swift */,
-				6C069A0B1E345EF0001A0C51 /* LLRefreshGifViewController.swift */,
+				6C9624F91E6EAEE4005D4A18 /* NormalRefreshViewController.swift */,
+				6C9624FB1E6EAFCF005D4A18 /* GifRefreshViewController.swift */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -242,7 +242,6 @@
 		6C83D19C1E344BC200C79DEF /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				6C83D19D1E344BC200C79DEF /* LLRefreshBGImageHeader.swift */,
 				6C83D19E1E344BC200C79DEF /* LLRefreshNormalHeader.swift */,
 				6C83D19F1E344BC200C79DEF /* LLRefreshStateHeader.swift */,
 				6C069A0D1E347D60001A0C51 /* LLRefreshGifHeader.swift */,
@@ -384,7 +383,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C3E651F1DF57A29004832AD /* ArrowViewController.swift in Sources */,
 				6C83D1A01E344BC200C79DEF /* LLRefreshAutoStateFooter.swift in Sources */,
 				6C83D1A31E344BC200C79DEF /* LLRefreshStateHeader.swift in Sources */,
 				6C2DF90C1DF2DB0C00202268 /* LLRefreshHeader.swift in Sources */,
@@ -392,18 +390,18 @@
 				6C069A0E1E347D60001A0C51 /* LLRefreshGifHeader.swift in Sources */,
 				6C2DF8D61DF2DAE600202268 /* ViewController.swift in Sources */,
 				6C069A0A1E344FDC001A0C51 /* LLRefreshAutoNormalFooter.swift in Sources */,
-				6C83D1A11E344BC200C79DEF /* LLRefreshBGImageHeader.swift in Sources */,
 				6C4F3E181E67F69400446C84 /* LLEatFooter.swift in Sources */,
+				6C9624FA1E6EAEE4005D4A18 /* NormalRefreshViewController.swift in Sources */,
 				6C2DF90E1DF2DB0C00202268 /* UIScrollView+LLExtension.swift in Sources */,
+				6C9624FE1E6EB087005D4A18 /* LLRefreshBGImageHeader.swift in Sources */,
 				6C4F3E161E67F15300446C84 /* LLRefreshAutoGifFooter.swift in Sources */,
-				6C68579D1E02AC600004C1DB /* FooterNormalTableViewController.swift in Sources */,
-				6C069A0C1E345EF0001A0C51 /* LLRefreshGifViewController.swift in Sources */,
 				6C2DF9121DF2DE2F00202268 /* StateRefreshViewController.swift in Sources */,
 				6CCB35DC1DFEBE54002CB3D3 /* LLRefreshFooter.swift in Sources */,
 				6C83D1A21E344BC200C79DEF /* LLRefreshNormalHeader.swift in Sources */,
 				6C2DF90B1DF2DB0C00202268 /* LLBaseRefreshHeader.swift in Sources */,
 				6C27FA021E000BC100E427E7 /* LLRefreshAutoFooter.swift in Sources */,
 				6C2DF90F1DF2DB0C00202268 /* UIView+LLExtension.swift in Sources */,
+				6C9624FC1E6EAFCF005D4A18 /* GifRefreshViewController.swift in Sources */,
 				6C2DF8D41DF2DAE600202268 /* AppDelegate.swift in Sources */,
 				6C069A131E34865F001A0C51 /* LLEatHeader.swift in Sources */,
 			);
@@ -549,11 +547,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LLRefreshDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefreshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LLRefreshDemo/Demos/LLRefreshDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -562,11 +563,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LLRefreshDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefreshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LLRefreshDemo/Demos/LLRefreshDemo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
