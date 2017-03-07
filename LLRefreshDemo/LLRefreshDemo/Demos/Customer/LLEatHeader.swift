@@ -35,20 +35,20 @@ class LLEatHeader: LLRefreshGifHeader {
 }
 
 
-class LLJdHeader: LLRefreshGifHeader {
-    
-    override func prepare() {
-        super.prepare()
-        //1.0 正常图片
-        var normalImage:[UIImage] = []
-        for index in 2...4 {
-            let image = UIImage(named: "jd_loading_\(index)")
-            normalImage.append(image!)
-        }
-        setImages(images: normalImage, state: .normal)
-        setImages(images: normalImage, state: .pulling)
-        setImages(images: normalImage, state: .refreshing)
-        
-    }
-    
-}
+//class LLJdHeader: LLRefreshGifHeader {
+//    
+//    override func prepare() {
+//        super.prepare()
+//        //1.0 正常图片
+//        var normalImage:[UIImage] = []
+//        for index in 2...4 {
+//            let image = UIImage(named: "jd_loading_\(index)")
+//            normalImage.append(image!)
+//        }
+//        setImages(images: normalImage, state: .normal)
+//        setImages(images: normalImage, state: .pulling)
+//        setImages(images: normalImage, state: .refreshing)
+//        
+//    }
+//    
+//}

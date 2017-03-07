@@ -16,6 +16,9 @@ struct LLConstant {
     static let AnimationDuration:TimeInterval = 0.4
     static let LastUpdateTimeKey:String = "RefreshHeaderLastUpdatedTimeKey"
     static let RefreshLabelLeftInset:CGFloat = 25
+    static let kContentOffset:String = "contentOffset"
+    static let kContentSize:String = "contentSize"
+    static let kState:String = "state"
 }
 
 
@@ -101,11 +104,11 @@ class LLBaseRefreshHeader: UIView {
             _scrollViewOriginalInset = _scrollView?.contentInset
             
             
-            scrollView.addObserver(self, forKeyPath: "contentOffset", options: [NSKeyValueObservingOptions.new , NSKeyValueObservingOptions.old], context: nil)
-            scrollView.addObserver(self, forKeyPath: "contentSize", options: [NSKeyValueObservingOptions.new , NSKeyValueObservingOptions.old], context: nil)
+            scrollView.addObserver(self, forKeyPath: LLConstant.kContentOffset, options: [NSKeyValueObservingOptions.new , NSKeyValueObservingOptions.old], context: nil)
+            scrollView.addObserver(self, forKeyPath: LLConstant.kContentSize, options: [NSKeyValueObservingOptions.new , NSKeyValueObservingOptions.old], context: nil)
             
             self.panGesture = _scrollView?.panGestureRecognizer
-            self.panGesture?.addObserver(self, forKeyPath: "state", options: [NSKeyValueObservingOptions.new , NSKeyValueObservingOptions.old], context: nil)
+            self.panGesture?.addObserver(self, forKeyPath: LLConstant.kState, options: [NSKeyValueObservingOptions.new , NSKeyValueObservingOptions.old], context: nil)
             
             
         }
@@ -116,15 +119,15 @@ class LLBaseRefreshHeader: UIView {
         guard isUserInteractionEnabled else {
             return
         }
-        if keyPath == "contentSize" {
+        if keyPath == LLConstant.kContentSize {
             scrollViewContentSizeDidChange(change as [NSKeyValueChangeKey : Any]?)
         }
         guard !isHidden else {
             return
         }
-        if keyPath == "contentOffset" {
+        if keyPath == LLConstant.kContentOffset {
             scrollViewContentOffsetDidChange(change as [NSKeyValueChangeKey : Any]?)
-        }else if keyPath == "state" {
+        }else if keyPath == LLConstant.kState {
             scrollViewPanStateDidChange(change as [NSKeyValueChangeKey : Any]?)
         }
     }
@@ -167,8 +170,6 @@ class LLBaseRefreshHeader: UIView {
             if let refreshingBlock = self?.refreshingBlock {
                 refreshingBlock()
             }
-
-            
             if self?.refreshingTarget?.responds(to: self?.refreshingAction) == true{
                 self?.refreshingTarget?.perform(self?.refreshingAction)
                
@@ -191,14 +192,13 @@ class LLBaseRefreshHeader: UIView {
     }
     func setState(_ state:LLRefreshState) {
         refreshState = state
-        print("state -> \(state)")
         updateUI()
     }
     
     func removeLLObservers()  {
-        self.superview?.removeObserver(self, forKeyPath: "contentOffset")
-        self.superview?.removeObserver(self, forKeyPath: "contentSize")
-        self.panGesture?.removeObserver(self, forKeyPath: "state")
+        self.superview?.removeObserver(self, forKeyPath: LLConstant.kContentOffset)
+        self.superview?.removeObserver(self, forKeyPath: LLConstant.kContentSize)
+        self.panGesture?.removeObserver(self, forKeyPath: LLConstant.kState)
         self.panGesture = nil
     }
     
