@@ -30,7 +30,7 @@
 ### Usage
 
 
-
+- Block
 ```swift
 //1.0 Init
 self.tableView.ll_header =  LLRefreshStateHeader {[weak self] _ in
@@ -41,8 +41,18 @@ self.tableView.ll_header =  LLRefreshStateHeader {[weak self] _ in
 //2.0 Begin refreshing
 self.tableView.ll_header?.beginRefreshing()
 ```
-
-
+- Target
+```swift
+tableView.ll_header = LLRefreshStateHeader(target: self, action: #selector(loadNewData))
+tableView.ll_header?.beginRefreshing()
+ func loadNewData()  {
+    //update data
+    sleep(2)
+    //end refreshing
+    tableView.ll_header?.endRefreshing()
+    tableView.reloadData()
+  }
+```
 
 
 
