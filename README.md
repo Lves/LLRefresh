@@ -28,7 +28,7 @@
 
 
 ### Usage
-
+使用时可以使用target或者block
 
 - Block
 ```swift
@@ -54,9 +54,10 @@ tableView.ll_header?.beginRefreshing()
   }
 ```
 
-
+具体使用和自定义可以下载demo查看
 
 ### Demo
+
 
 1. Noraml refresh header
 
