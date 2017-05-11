@@ -26,10 +26,9 @@ class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
     
     override func prepare() {
         super.prepare()
-        
-        setTitle("点击或上拉加载更多", state: .normal)
-        setTitle("正在加载更多的数据...", state: .refreshing)
-        setTitle("已经全部加载完毕", state: .noMoreData)
+        setTitle(LLConstant.kFooterStateTitleNormal, state: .normal)
+        setTitle(LLConstant.kFooterStateTitleRefreshing, state: .refreshing)
+        setTitle(LLConstant.kFooterStateTitleNoMoreData, state: .noMoreData)
         stateLabel.isUserInteractionEnabled = true
         stateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(stateLabelClick)))
         
@@ -48,19 +47,13 @@ class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
             return
         }
         stateLabel.frame = self.bounds
-        
     }
-    
-    
     //MARK:- private
     func stateLabelClick()  {
         if refreshState == .normal {
             beginRefreshing()
         }
     }
-    
-    
-    
     //MARK: - Public
     func setTitle(_ title:String?, state:LLRefreshState)  {
         if let title = title {

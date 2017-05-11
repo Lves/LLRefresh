@@ -67,9 +67,9 @@ class LLRefreshStateHeader: LLRefreshHeader {
         // 初始化间距
         labelLeftInset = LLConstant.RefreshLabelLeftInset
         
-        setTitle("下拉可以刷新", state: .normal)
-        setTitle("松开立即刷新", state: .pulling)
-        setTitle("正在刷新数据中", state: .refreshing)
+        setTitle(LLConstant.kHeaderStateTitleNormal, state: .normal)
+        setTitle(LLConstant.kHeaderStateTitlePulling, state: .pulling)
+        setTitle(LLConstant.kHeaderStateTitleRefreshing, state: .refreshing)
         
         setLastUpdateTimeLable()
     }

@@ -19,6 +19,12 @@ struct LLConstant {
     static let kContentOffset:String = "contentOffset"
     static let kContentSize:String = "contentSize"
     static let kState:String = "state"
+    static let kFooterStateTitleNormal = "点击或上拉加载更多"
+    static let kFooterStateTitleRefreshing = "正在加载更多的数据..."
+    static let kFooterStateTitleNoMoreData = "已经全部加载完毕"
+    static let kHeaderStateTitleNormal = "下拉可以刷新"
+    static let kHeaderStateTitleRefreshing = "正在刷新数据中"
+    static let kHeaderStateTitlePulling = "松开立即刷新"
 }
 
 

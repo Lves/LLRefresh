@@ -33,12 +33,19 @@ class StateRefreshViewController: UIViewController {
         tableView.ll_footer = LLRefreshAutoStateFooter(refreshingBlock: { [weak self] _ in
             self?.loadMoreDate()
         })
+        
     }
     
     //MARK: Target实现方式
     func setRefreshByTarget(){
         tableView.ll_header = LLRefreshStateHeader(target: self, action: #selector(loadNewData))
         tableView.ll_footer = LLRefreshAutoStateFooter(target: self, action: #selector(loadMoreDate))
+        if let footer:LLRefreshAutoStateFooter = tableView.ll_footer as? LLRefreshAutoStateFooter{
+            if dataArray.count <= 0 {
+                footer.setTitle("", state: .normal)
+            }
+        }
+
     }
     func loadNewData()  {
         //update data
