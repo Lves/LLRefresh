@@ -9,7 +9,6 @@
 import UIKit
 
 class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
-
     var labelLeftInset:CGFloat = LLConstant.RefreshLabelLeftInset
     lazy var stateLabel: UILabel = {
         let label = UILabel()
@@ -21,9 +20,7 @@ class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
         return label
     }()
     var refreshingTitleHidden:Bool = false
-    
     fileprivate var stateTitles:[Int:String] = [:]
-    
     override func prepare() {
         super.prepare()
         setTitle(LLConstant.kFooterStateTitleNormal, state: .normal)
@@ -31,7 +28,6 @@ class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
         setTitle(LLConstant.kFooterStateTitleNoMoreData, state: .noMoreData)
         stateLabel.isUserInteractionEnabled = true
         stateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(stateLabelClick)))
-        
     }
     override func setState(_ state: LLRefreshState) {
         super.setState(state)
@@ -49,7 +45,7 @@ class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
         stateLabel.frame = self.bounds
     }
     //MARK:- private
-    func stateLabelClick()  {
+    @objc private func stateLabelClick()  {
         if refreshState == .normal {
             beginRefreshing()
         }

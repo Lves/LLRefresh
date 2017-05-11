@@ -16,10 +16,8 @@ class LLRefreshAutoGifFooter: LLRefreshAutoStateFooter {
     }()
     var stateImages: [LLRefreshState: [UIImage]] = [:]
     var stateDurations: [LLRefreshState: TimeInterval] = [:]
-    
     //MARK: - Public
     func setImages(images: [UIImage]?, state: LLRefreshState, duration: TimeInterval? = -1)  {
-        
         guard let imgs = images , imgs.count > 0 else {
             return
         }
@@ -34,7 +32,6 @@ class LLRefreshAutoGifFooter: LLRefreshAutoStateFooter {
         }
     }
     //MARK: - Parents fucntion
-    
     override func prepare() {
         super.prepare()
         labelLeftInset = 20
@@ -51,10 +48,8 @@ class LLRefreshAutoGifFooter: LLRefreshAutoStateFooter {
             gifView.contentMode = .bottomRight
             let stateW = stateLabel.ll_textWidth
             gifView.ll_w = ll_w * 0.5 - stateW * 0.5 - labelLeftInset
-            
         }
     }
-    
     override func setState(_ state: LLRefreshState) {
         super.setState(state)
         if state == .refreshing {
@@ -76,6 +71,4 @@ class LLRefreshAutoGifFooter: LLRefreshAutoStateFooter {
             gifView.isHidden = true
         }
     }
-
-    
 }

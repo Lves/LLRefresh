@@ -44,8 +44,6 @@ fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 
 class LLRefreshHeader: LLBaseRefreshHeader {
-    
-    
     ///last update time
     var lastUpdateTime:Date? {
         get{
@@ -53,7 +51,6 @@ class LLRefreshHeader: LLBaseRefreshHeader {
         }
     }
     var insetTDelta:CGFloat = 0
-    
     init() {
         super.init(frame: CGRect.zero)
     }
@@ -64,19 +61,15 @@ class LLRefreshHeader: LLBaseRefreshHeader {
     init(target:AnyObject , action: Selector){
         super.init(frame: CGRect.zero)
         self.setRefrshing(target: target, action: action)
-        
     }
     class func header(target:AnyObject , action: Selector) -> LLRefreshHeader{
         let header = LLRefreshHeader()
         header.setRefrshing(target: target, action: action)
         return header
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
- 
-    
     /** 忽略多少scrollView的contentInset的top */
     var ignoredScrollViewContentInsetTop:CGFloat = 0
 
@@ -103,7 +96,6 @@ class LLRefreshHeader: LLBaseRefreshHeader {
                     endRefreshingCompletionBlock()
                 }
             })
-            
         }else if state == .refreshing {
             DispatchQueue.main.async(execute: {
                 UIView.animate(withDuration: LLConstant.AnimationDuration, animations: {
@@ -115,19 +107,15 @@ class LLRefreshHeader: LLBaseRefreshHeader {
                 })
             })
         }
-       
     }
-    
     override func placeSubViews() {
         super.placeSubViews()
         self.ll_y = -ll_h - ignoredScrollViewContentInsetTop
     }
-    
     override func prepare() {
         super.prepare()
         ll_h = LLConstant.HeaderHeight
     }
-    
     override func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey:Any]?) {
         super.scrollViewContentOffsetDidChange(change)
         if refreshState == .refreshing {  //正在刷新
@@ -153,7 +141,6 @@ class LLRefreshHeader: LLBaseRefreshHeader {
         if offsetY > happenOffsetY {
             return
         }
-        
         // 普通 和 即将刷新 的临界点
         let normal2pullingOffsetY = happenOffsetY - self.ll_h;
         let pullingPercent = (happenOffsetY - (offsetY ?? 0)) / self.ll_h;

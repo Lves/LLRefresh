@@ -20,7 +20,6 @@ class LLRefreshAutoNormalFooter: LLRefreshAutoStateFooter {
         self.addSubview(loadingView)
         return loadingView
     }()
-    
     override func placeSubViews() {
         super.placeSubViews()
         

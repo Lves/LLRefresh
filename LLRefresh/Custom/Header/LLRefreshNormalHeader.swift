@@ -7,33 +7,26 @@
 //  带有箭头的默认刷新header
 
 import UIKit
-
-
 class LLRefreshNormalHeader: LLRefreshStateHeader {
     var activityIndicatorViewStyle: UIActivityIndicatorViewStyle = .gray{
         didSet{
             setNeedsLayout()
         }
     }
-    
     fileprivate lazy var arrowView: UIImageView = {
         let arrowView = UIImageView(image: UIImage(named: "arrow"))
         self.addSubview(arrowView)
         return arrowView
     }()
-    
     fileprivate lazy var loadingView: UIActivityIndicatorView = {
         let loadingView = UIActivityIndicatorView(activityIndicatorStyle: self.activityIndicatorViewStyle)
         loadingView.hidesWhenStopped = true
         self.addSubview(loadingView)
         return loadingView
     }()
-    
-
     //MARK: -  集成父类方法
     override func placeSubViews() {
         super.placeSubViews()
-        
        //箭头位置
         var arrowCentereX = ll_w*0.5
         if !stateLabel.isHidden {  //提示问题没有隐藏
@@ -81,7 +74,6 @@ class LLRefreshNormalHeader: LLRefreshStateHeader {
                 UIView.animate(withDuration: LLConstant.AnimationDuration, animations: {
                     self.arrowView.transform = CGAffineTransform.identity
                 })
-            
             }
         }else if state == .pulling {
             loadingView.stopAnimating()
@@ -94,7 +86,5 @@ class LLRefreshNormalHeader: LLRefreshStateHeader {
             loadingView.startAnimating()
             arrowView.isHidden = true
         }
-
     }
-
 }

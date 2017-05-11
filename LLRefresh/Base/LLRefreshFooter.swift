@@ -59,7 +59,6 @@ class LLRefreshFooter: LLBaseRefreshHeader {
     func resetNoMoreData()  {
         setState(.normal)
     }
-    
     func endRefreshingWithNoMoreData() {
         setState(.noMoreData)
     }

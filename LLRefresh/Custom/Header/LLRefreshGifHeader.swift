@@ -22,7 +22,6 @@ class LLRefreshGifHeader: LLRefreshStateHeader {
             guard !isRefreshing else {
                 return
             }
-            
             let images = self.stateImages[.normal]
             if refreshState != .normal || images?.count == 0 {
                 return
@@ -39,23 +38,18 @@ class LLRefreshGifHeader: LLRefreshStateHeader {
     
     //MARK: - Public
     func setImages(images: [UIImage]?, state: LLRefreshState, duration: TimeInterval? = -1)  {
-        
         guard let imgs = images , imgs.count > 0 else {
             return
         }
         self.stateImages[state] = imgs
-        
         let time = Double(duration!) < 0.0 ? Double(imgs.count) * 0.1 : duration
-        
         self.stateDurations[state] = time
         let firstImage = imgs.first
         if (firstImage?.size.height ?? 0) > self.ll_h {
             self.ll_h = firstImage?.size.height ?? 0
         }
     }
-    
     //MARK: - Parents fucntion
-    
     override func prepare() {
         super.prepare()
         labelLeftInset = 20
@@ -77,10 +71,8 @@ class LLRefreshGifHeader: LLRefreshStateHeader {
             }
             let textW = max(stateW, timeW)
             gifView.ll_w = ll_w * 0.5 - textW * 0.5 - labelLeftInset
-        
         }
     }
-   
     override func setState(_ state: LLRefreshState) {
         super.setState(state)
         if state == .pulling || state == .refreshing {

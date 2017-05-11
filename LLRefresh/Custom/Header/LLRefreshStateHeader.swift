@@ -95,12 +95,8 @@ class LLRefreshStateHeader: LLRefreshHeader {
                  calendar = NSCalendar(identifier: NSCalendar.Identifier.gregorian) as Calendar?
             }
             calendar = Calendar.current
-//            let calendarUnit =
-            
             let cmp1 = (calendar as NSCalendar?)?.components([NSCalendar.Unit.year, NSCalendar.Unit.month , NSCalendar.Unit.day ,NSCalendar.Unit.hour ,NSCalendar.Unit.minute], from:lastUpdateTime as Date)
             let cmp2 = (calendar as NSCalendar?)?.components([NSCalendar.Unit.year, NSCalendar.Unit.month , NSCalendar.Unit.day ,NSCalendar.Unit.hour ,NSCalendar.Unit.minute], from: Date())
-            
-            
             //格式化
             let dateForamt = DateFormatter()
             var isToday = false
@@ -113,19 +109,12 @@ class LLRefreshStateHeader: LLRefreshHeader {
                 dateForamt.dateFormat = "yyyy-MM-dd HH:mm"
             }
             let time = dateForamt.string(from: lastUpdateTime as Date)
-            
             let str = isToday ? "今天" : ""
-            
             lastUpdatedTimeLabel.text = "最后更新：\(str)\(time)"
-            
-            
         }else {     //第一次刷新
             lastUpdatedTimeLabel.text = "最后更新：无记录"
         }
-        
-        
     }
-    
     //MARK: - Public 
     func setTitle(_ title:String?, state:LLRefreshState)  {
         if let title = title {
@@ -133,7 +122,4 @@ class LLRefreshStateHeader: LLRefreshHeader {
             stateLabel.text = stateTitles[refreshState.rawValue]
         }
     }
-    
-   
-
 }
