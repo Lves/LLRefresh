@@ -177,8 +177,9 @@ class LLBaseRefreshHeader: UIView {
                 refreshingBlock()
             }
             if self?.refreshingTarget?.responds(to: self?.refreshingAction) == true{
-                self?.refreshingTarget?.perform(self?.refreshingAction)
-               
+                if let selector = self?.refreshingAction {
+                    (self?.refreshingTarget)?.perform(selector)
+                }
             }
             if let beginRefreshingCompletionBlock = self?.beginRefreshingCompletionBlock {
                 beginRefreshingCompletionBlock()
