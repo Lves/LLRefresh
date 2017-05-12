@@ -7,7 +7,7 @@
 //  带有背景图片的刷新header
 
 import UIKit
-import LXLRefresh
+import LLRefresh
 
 class LLRefreshBGImageHeader: LLRefreshNormalHeader {
 

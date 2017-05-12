@@ -7,7 +7,7 @@
 //  带有箭头的默认刷新header
 
 import UIKit
-class LLRefreshNormalHeader: LLRefreshStateHeader {
+open class LLRefreshNormalHeader: LLRefreshStateHeader {
     var activityIndicatorViewStyle: UIActivityIndicatorViewStyle = .gray{
         didSet{
             setNeedsLayout()
@@ -25,7 +25,7 @@ class LLRefreshNormalHeader: LLRefreshStateHeader {
         return loadingView
     }()
     //MARK: -  集成父类方法
-    override func placeSubViews() {
+    override open func placeSubViews() {
         super.placeSubViews()
        //箭头位置
         var arrowCentereX = ll_w*0.5

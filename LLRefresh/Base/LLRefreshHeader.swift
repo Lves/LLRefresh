@@ -43,7 +43,7 @@ fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class LLRefreshHeader: LLBaseRefreshHeader {
+open class LLRefreshHeader: LLBaseRefreshHeader {
     ///last update time
     var lastUpdateTime:Date? {
         get{
@@ -54,20 +54,20 @@ class LLRefreshHeader: LLBaseRefreshHeader {
     init() {
         super.init(frame: CGRect.zero)
     }
-    init(refreshingBlock:(()->())?) {
+    public init(refreshingBlock:(()->())?) {
         super.init(frame: CGRect.zero)
         self.refreshingBlock = refreshingBlock
     }
-    init(target:AnyObject , action: Selector){
+    public init(target:AnyObject , action: Selector){
         super.init(frame: CGRect.zero)
         self.setRefrshing(target: target, action: action)
     }
-    class func header(target:AnyObject , action: Selector) -> LLRefreshHeader{
+    open class func header(target:AnyObject , action: Selector) -> LLRefreshHeader{
         let header = LLRefreshHeader()
         header.setRefrshing(target: target, action: action)
         return header
     }
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     /** 忽略多少scrollView的contentInset的top */
@@ -108,11 +108,11 @@ class LLRefreshHeader: LLBaseRefreshHeader {
             })
         }
     }
-    override func placeSubViews() {
+    override open func placeSubViews() {
         super.placeSubViews()
         self.ll_y = -ll_h - ignoredScrollViewContentInsetTop
     }
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
         ll_h = LLConstant.HeaderHeight
     }
@@ -163,7 +163,7 @@ class LLRefreshHeader: LLBaseRefreshHeader {
     }
 
     //MARK: - public
-    override func endRefreshing()  {
+    override open func endRefreshing()  {
         DispatchQueue.main.async(execute: {
             self.setState(.normal)
         })

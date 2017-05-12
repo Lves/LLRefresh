@@ -29,12 +29,12 @@ fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     return !(rhs < lhs)
   }
 }
-class LLRefreshAutoFooter: LLRefreshFooter {
+open class LLRefreshAutoFooter: LLRefreshFooter {
     var triggerAutomaticallyRefreshPercent:CGFloat = 0
     var automaticallyRefresh:Bool = true
     
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override open func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         if (newSuperview != nil) {
             if !isHidden {
@@ -50,7 +50,7 @@ class LLRefreshAutoFooter: LLRefreshFooter {
         }
     }
     
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
         triggerAutomaticallyRefreshPercent = 1.0
     }
@@ -122,7 +122,7 @@ class LLRefreshAutoFooter: LLRefreshFooter {
             }
         }
     }
-    override var isHidden: Bool {
+    override open var isHidden: Bool {
         get {
             return super.isHidden
         }

@@ -12,7 +12,7 @@ var LLRefreshHeaderKey = "\0"
 var LLRefreshFooterKey = "\0"
 var LLRefreshReloadDataBlockKey = "\0"
 
-typealias VoidBlock = (_ count: Int?)->(Void)
+public typealias VoidBlock = (_ count: Int?)->(Void)
 
 class LLObjectWrapper: NSObject {
     let value: ((_ count: Int?) -> Void)?
@@ -22,8 +22,8 @@ class LLObjectWrapper: NSObject {
     }
 }
 
-extension UIScrollView {
-    var ll_header:LLBaseRefreshHeader? {
+public extension UIScrollView {
+    public var ll_header:LLBaseRefreshHeader? {
         set{
             if newValue != ll_header {
                 self.ll_header?.removeFromSuperview()
@@ -41,7 +41,7 @@ extension UIScrollView {
         }
     }
     
-    var ll_footer:LLBaseRefreshHeader? {
+    public var ll_footer:LLBaseRefreshHeader? {
         set{
             if newValue != ll_footer {
                 self.ll_footer?.removeFromSuperview()
@@ -59,7 +59,7 @@ extension UIScrollView {
         }
     }
     
-    var ll_reloadDataBlock:VoidBlock? {
+   public  var ll_reloadDataBlock:VoidBlock? {
         set{
             self.willChangeValue(forKey: "ll_reloadDataBlock")
             let wrapper = LLObjectWrapper(value: newValue!)

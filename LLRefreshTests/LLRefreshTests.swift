@@ -1,15 +1,15 @@
 //
-//  LXLRefreshTests.swift
-//  LXLRefreshTests
+//  LLRefreshTests.swift
+//  LLRefreshTests
 //
 //  Created by lixingle on 2017/5/12.
 //  Copyright © 2017年 com.lvesli. All rights reserved.
 //
 
 import XCTest
-@testable import LXLRefresh
+@testable import LLRefresh
 
-class LXLRefreshTests: XCTestCase {
+class LLRefreshTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

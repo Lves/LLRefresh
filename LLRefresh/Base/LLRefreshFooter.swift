@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LLRefreshFooter: LLBaseRefreshHeader {
+open class LLRefreshFooter: LLBaseRefreshHeader {
     //是否自动根据数据隐藏
     var automaticallyHidden:Bool = false
     
@@ -16,31 +16,31 @@ class LLRefreshFooter: LLBaseRefreshHeader {
         super.init(frame: CGRect.zero)
     }
 
-    init(refreshingBlock:(()->())?) {
+    public init(refreshingBlock:(()->())?) {
         super.init(frame: CGRect.zero)
         self.refreshingBlock = refreshingBlock
     }
-    init(target:AnyObject , action: Selector){
+    public init(target:AnyObject , action: Selector){
         super.init(frame: CGRect.zero)
         self.setRefrshing(target: target, action: action)
         
     }
-    class func footer(target:AnyObject , action: Selector) -> LLRefreshFooter{
+    public class func footer(target:AnyObject , action: Selector) -> LLRefreshFooter{
         let footer = LLRefreshFooter()
         footer.setRefrshing(target: target, action: action)
         return footer
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
         ll_h = LLConstant.FooterHeight
     }
 
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override open func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         if newSuperview != nil {
             if _scrollView is UITableView || _scrollView is UICollectionView {

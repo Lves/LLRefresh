@@ -10,7 +10,7 @@ import UIKit
 
 
 
-struct LLConstant {
+public struct LLConstant {
     static let HeaderHeight:CGFloat = 54
     static let FooterHeight:CGFloat = 44.0
     static let AnimationDuration:TimeInterval = 0.4
@@ -28,7 +28,7 @@ struct LLConstant {
 }
 
 
-enum LLRefreshState:Int {
+public enum LLRefreshState:Int {
     case normal
     case pulling
     case refreshing
@@ -36,7 +36,7 @@ enum LLRefreshState:Int {
     case noMoreData
 }
 
-class LLBaseRefreshHeader: UIView {
+open class LLBaseRefreshHeader: UIView {
     //父控件
     weak var _scrollView:UIScrollView?
     //手势
@@ -44,7 +44,7 @@ class LLBaseRefreshHeader: UIView {
     ///ScrollView起始位置
     var _scrollViewOriginalInset:UIEdgeInsets?
     ///下拉百分比
-    var _pullingPercent:CGFloat = 0 {
+    open var _pullingPercent:CGFloat = 0 {
         didSet{
             guard !isRefreshing else {
                 return
@@ -60,12 +60,12 @@ class LLBaseRefreshHeader: UIView {
     //状态
     var refreshState:LLRefreshState = .normal
     
-    var refreshingBlock:(()->())?
-    var beginRefreshingCompletionBlock:(()->())?
-    var endRefreshingCompletionBlock:(()->())?
+    open var refreshingBlock:(()->())?
+    open var beginRefreshingCompletionBlock:(()->())?
+    open var endRefreshingCompletionBlock:(()->())?
     
-    var refreshingTarget:AnyObject?
-    var refreshingAction:Selector?
+    open var refreshingTarget:AnyObject?
+    open var refreshingAction:Selector?
     
     
 
@@ -75,28 +75,28 @@ class LLBaseRefreshHeader: UIView {
         prepare()
         self.setState(.normal)
     }
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         placeSubViews()
         super.layoutSubviews()
         
     }
-    override func draw(_ rect: CGRect) {
+    override  open func draw(_ rect: CGRect) {
         super.draw(rect)
         if refreshState == .willRefresh {
             setState(.refreshing)
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    override func removeFromSuperview() {
+    override open func removeFromSuperview() {
         removeLLObservers()
         super.removeFromSuperview()
         
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override open func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         
         
@@ -120,7 +120,7 @@ class LLBaseRefreshHeader: UIView {
         }
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         guard isUserInteractionEnabled else {
             return
@@ -144,7 +144,7 @@ class LLBaseRefreshHeader: UIView {
     
     //MARK: - public
     
-    func beginRefreshing()  {
+    open func beginRefreshing()  {
         UIView.animate(withDuration: 0.4, animations: {
             self.alpha = 1.0
         })
@@ -158,11 +158,11 @@ class LLBaseRefreshHeader: UIView {
             }
         }
     }
-    func endRefreshing()  {
+    open func endRefreshing()  {
         self.setState(.normal)
     }
     
-    func setRefrshing(target:AnyObject, action:Selector){
+    open func setRefrshing(target:AnyObject, action:Selector){
         self.refreshingTarget = target
         self.refreshingAction = action
     }
@@ -188,11 +188,11 @@ class LLBaseRefreshHeader: UIView {
     }
     
     
-    func prepare(){
+    open  func prepare(){
         autoresizingMask = .flexibleWidth
         backgroundColor = UIColor.clear
     }
-    func updateUI()  {
+    open  func updateUI()  {
         DispatchQueue.main.async { [weak self] _ in
             self?.setNeedsLayout()
         }

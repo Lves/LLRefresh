@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
+open class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
     var labelLeftInset:CGFloat = LLConstant.RefreshLabelLeftInset
     lazy var stateLabel: UILabel = {
         let label = UILabel()
@@ -21,7 +21,7 @@ class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
     }()
     var refreshingTitleHidden:Bool = false
     fileprivate var stateTitles:[Int:String] = [:]
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
         setTitle(LLConstant.kFooterStateTitleNormal, state: .normal)
         setTitle(LLConstant.kFooterStateTitleRefreshing, state: .refreshing)
@@ -51,7 +51,7 @@ class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
         }
     }
     //MARK: - Public
-    func setTitle(_ title:String?, state:LLRefreshState)  {
+    open func setTitle(_ title:String?, state:LLRefreshState)  {
         if let title = title {
             stateTitles[state.rawValue] = title
             stateLabel.text = stateTitles[refreshState.rawValue]

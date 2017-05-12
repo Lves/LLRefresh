@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LXLRefresh
+import LLRefresh
 class NormalRefreshViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var dataArray:[String] = []

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LXLRefresh
+import LLRefresh
 class GifRefreshViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!

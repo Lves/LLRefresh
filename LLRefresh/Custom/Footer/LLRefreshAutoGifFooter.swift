@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LLRefreshAutoGifFooter: LLRefreshAutoStateFooter {
+open class LLRefreshAutoGifFooter: LLRefreshAutoStateFooter {
     lazy var gifView: UIImageView = {
         let gifView = UIImageView()
         self.addSubview(gifView)
@@ -17,7 +17,7 @@ class LLRefreshAutoGifFooter: LLRefreshAutoStateFooter {
     var stateImages: [LLRefreshState: [UIImage]] = [:]
     var stateDurations: [LLRefreshState: TimeInterval] = [:]
     //MARK: - Public
-    func setImages(images: [UIImage]?, state: LLRefreshState, duration: TimeInterval? = -1)  {
+    open func setImages(images: [UIImage]?, state: LLRefreshState, duration: TimeInterval? = -1)  {
         guard let imgs = images , imgs.count > 0 else {
             return
         }
@@ -32,7 +32,7 @@ class LLRefreshAutoGifFooter: LLRefreshAutoStateFooter {
         }
     }
     //MARK: - Parents fucntion
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
         labelLeftInset = 20
     }

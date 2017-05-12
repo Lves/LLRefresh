@@ -21,24 +21,24 @@
 		6C9624FC1E6EAFCF005D4A18 /* GifRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9624FB1E6EAFCF005D4A18 /* GifRefreshViewController.swift */; };
 		6C9624FE1E6EB087005D4A18 /* LLRefreshBGImageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9624FD1E6EB087005D4A18 /* LLRefreshBGImageHeader.swift */; };
 		6C9625001E6EB300005D4A18 /* BgImageRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9624FF1E6EB300005D4A18 /* BgImageRefreshViewController.swift */; };
-		6CA9993D1EC5509E0025D36D /* LXLRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA999341EC5509E0025D36D /* LXLRefresh.framework */; };
-		6CA999441EC5509E0025D36D /* LXLRefreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999431EC5509E0025D36D /* LXLRefreshTests.swift */; };
-		6CA999461EC5509E0025D36D /* LXLRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CA999361EC5509E0025D36D /* LXLRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6CA999491EC5509E0025D36D /* LXLRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA999341EC5509E0025D36D /* LXLRefresh.framework */; };
-		6CA9994B1EC5509E0025D36D /* LXLRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA999341EC5509E0025D36D /* LXLRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6CA999871EC566110025D36D /* LLBaseRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999751EC566110025D36D /* LLBaseRefreshHeader.swift */; };
-		6CA999881EC566110025D36D /* LLRefreshAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999761EC566110025D36D /* LLRefreshAutoFooter.swift */; };
-		6CA999891EC566110025D36D /* LLRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999771EC566110025D36D /* LLRefreshFooter.swift */; };
-		6CA9998A1EC566110025D36D /* LLRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999781EC566110025D36D /* LLRefreshHeader.swift */; };
-		6CA9998B1EC566110025D36D /* LLRefreshAutoGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9997B1EC566110025D36D /* LLRefreshAutoGifFooter.swift */; };
-		6CA9998C1EC566110025D36D /* LLRefreshAutoNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9997C1EC566110025D36D /* LLRefreshAutoNormalFooter.swift */; };
-		6CA9998D1EC566110025D36D /* LLRefreshAutoStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9997D1EC566110025D36D /* LLRefreshAutoStateFooter.swift */; };
-		6CA9998E1EC566110025D36D /* LLRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9997F1EC566110025D36D /* LLRefreshGifHeader.swift */; };
-		6CA9998F1EC566110025D36D /* LLRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999801EC566110025D36D /* LLRefreshNormalHeader.swift */; };
-		6CA999901EC566110025D36D /* LLRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999811EC566110025D36D /* LLRefreshStateHeader.swift */; };
-		6CA999911EC566110025D36D /* UILabel+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999841EC566110025D36D /* UILabel+LLExtension.swift */; };
-		6CA999921EC566110025D36D /* UIScrollView+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999851EC566110025D36D /* UIScrollView+LLExtension.swift */; };
-		6CA999931EC566110025D36D /* UIView+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999861EC566110025D36D /* UIView+LLExtension.swift */; };
+		6CA999EA1EC56CF70025D36D /* LLRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA999E11EC56CF70025D36D /* LLRefresh.framework */; };
+		6CA999F11EC56CF70025D36D /* LLRefreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999F01EC56CF70025D36D /* LLRefreshTests.swift */; };
+		6CA999F31EC56CF70025D36D /* LLRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CA999E31EC56CF70025D36D /* LLRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CA999F61EC56CF70025D36D /* LLRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA999E11EC56CF70025D36D /* LLRefresh.framework */; };
+		6CA999F71EC56CF70025D36D /* LLRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA999E11EC56CF70025D36D /* LLRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6CA99A101EC56D210025D36D /* LLBaseRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA999FF1EC56D210025D36D /* LLBaseRefreshHeader.swift */; };
+		6CA99A111EC56D210025D36D /* LLRefreshAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A001EC56D210025D36D /* LLRefreshAutoFooter.swift */; };
+		6CA99A121EC56D210025D36D /* LLRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A011EC56D210025D36D /* LLRefreshFooter.swift */; };
+		6CA99A131EC56D210025D36D /* LLRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A021EC56D210025D36D /* LLRefreshHeader.swift */; };
+		6CA99A141EC56D210025D36D /* LLRefreshAutoGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A051EC56D210025D36D /* LLRefreshAutoGifFooter.swift */; };
+		6CA99A151EC56D210025D36D /* LLRefreshAutoNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A061EC56D210025D36D /* LLRefreshAutoNormalFooter.swift */; };
+		6CA99A161EC56D210025D36D /* LLRefreshAutoStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A071EC56D210025D36D /* LLRefreshAutoStateFooter.swift */; };
+		6CA99A171EC56D210025D36D /* LLRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A091EC56D210025D36D /* LLRefreshGifHeader.swift */; };
+		6CA99A181EC56D210025D36D /* LLRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A0A1EC56D210025D36D /* LLRefreshNormalHeader.swift */; };
+		6CA99A191EC56D210025D36D /* LLRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A0B1EC56D210025D36D /* LLRefreshStateHeader.swift */; };
+		6CA99A1A1EC56D210025D36D /* UILabel+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A0D1EC56D210025D36D /* UILabel+LLExtension.swift */; };
+		6CA99A1B1EC56D210025D36D /* UIScrollView+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A0E1EC56D210025D36D /* UIScrollView+LLExtension.swift */; };
+		6CA99A1C1EC56D210025D36D /* UIView+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA99A0F1EC56D210025D36D /* UIView+LLExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,26 +56,26 @@
 			remoteGlobalIDString = 6C2DF8CF1DF2DAE600202268;
 			remoteInfo = LLRefreshDemo;
 		};
-		6CA9993E1EC5509E0025D36D /* PBXContainerItemProxy */ = {
+		6CA999EB1EC56CF70025D36D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6C2DF8C81DF2DAE600202268 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6CA999331EC5509E0025D36D;
-			remoteInfo = LXLRefresh;
+			remoteGlobalIDString = 6CA999E01EC56CF70025D36D;
+			remoteInfo = LLRefresh;
 		};
-		6CA999401EC5509E0025D36D /* PBXContainerItemProxy */ = {
+		6CA999ED1EC56CF70025D36D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6C2DF8C81DF2DAE600202268 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6C2DF8CF1DF2DAE600202268;
 			remoteInfo = LLRefreshDemo;
 		};
-		6CA999471EC5509E0025D36D /* PBXContainerItemProxy */ = {
+		6CA999F41EC56CF70025D36D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6C2DF8C81DF2DAE600202268 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6CA999331EC5509E0025D36D;
-			remoteInfo = LXLRefresh;
+			remoteGlobalIDString = 6CA999E01EC56CF70025D36D;
+			remoteInfo = LLRefresh;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -86,7 +86,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6CA9994B1EC5509E0025D36D /* LXLRefresh.framework in Embed Frameworks */,
+				6CA999F71EC56CF70025D36D /* LLRefresh.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,25 +115,25 @@
 		6C9624FB1E6EAFCF005D4A18 /* GifRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifRefreshViewController.swift; sourceTree = "<group>"; };
 		6C9624FD1E6EB087005D4A18 /* LLRefreshBGImageHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshBGImageHeader.swift; sourceTree = "<group>"; };
 		6C9624FF1E6EB300005D4A18 /* BgImageRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BgImageRefreshViewController.swift; sourceTree = "<group>"; };
-		6CA999341EC5509E0025D36D /* LXLRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LXLRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CA999361EC5509E0025D36D /* LXLRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLRefresh.h; sourceTree = "<group>"; };
-		6CA999371EC5509E0025D36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6CA9993C1EC5509E0025D36D /* LXLRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LXLRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CA999431EC5509E0025D36D /* LXLRefreshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXLRefreshTests.swift; sourceTree = "<group>"; };
-		6CA999451EC5509E0025D36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6CA999751EC566110025D36D /* LLBaseRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBaseRefreshHeader.swift; sourceTree = "<group>"; };
-		6CA999761EC566110025D36D /* LLRefreshAutoFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoFooter.swift; sourceTree = "<group>"; };
-		6CA999771EC566110025D36D /* LLRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshFooter.swift; sourceTree = "<group>"; };
-		6CA999781EC566110025D36D /* LLRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshHeader.swift; sourceTree = "<group>"; };
-		6CA9997B1EC566110025D36D /* LLRefreshAutoGifFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoGifFooter.swift; sourceTree = "<group>"; };
-		6CA9997C1EC566110025D36D /* LLRefreshAutoNormalFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoNormalFooter.swift; sourceTree = "<group>"; };
-		6CA9997D1EC566110025D36D /* LLRefreshAutoStateFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoStateFooter.swift; sourceTree = "<group>"; };
-		6CA9997F1EC566110025D36D /* LLRefreshGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshGifHeader.swift; sourceTree = "<group>"; };
-		6CA999801EC566110025D36D /* LLRefreshNormalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshNormalHeader.swift; sourceTree = "<group>"; };
-		6CA999811EC566110025D36D /* LLRefreshStateHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshStateHeader.swift; sourceTree = "<group>"; };
-		6CA999841EC566110025D36D /* UILabel+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+LLExtension.swift"; sourceTree = "<group>"; };
-		6CA999851EC566110025D36D /* UIScrollView+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+LLExtension.swift"; sourceTree = "<group>"; };
-		6CA999861EC566110025D36D /* UIView+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LLExtension.swift"; sourceTree = "<group>"; };
+		6CA999E11EC56CF70025D36D /* LLRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LLRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CA999E31EC56CF70025D36D /* LLRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLRefresh.h; sourceTree = "<group>"; };
+		6CA999E41EC56CF70025D36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CA999E91EC56CF70025D36D /* LLRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LLRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CA999F01EC56CF70025D36D /* LLRefreshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLRefreshTests.swift; sourceTree = "<group>"; };
+		6CA999F21EC56CF70025D36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CA999FF1EC56D210025D36D /* LLBaseRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBaseRefreshHeader.swift; sourceTree = "<group>"; };
+		6CA99A001EC56D210025D36D /* LLRefreshAutoFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoFooter.swift; sourceTree = "<group>"; };
+		6CA99A011EC56D210025D36D /* LLRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshFooter.swift; sourceTree = "<group>"; };
+		6CA99A021EC56D210025D36D /* LLRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshHeader.swift; sourceTree = "<group>"; };
+		6CA99A051EC56D210025D36D /* LLRefreshAutoGifFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoGifFooter.swift; sourceTree = "<group>"; };
+		6CA99A061EC56D210025D36D /* LLRefreshAutoNormalFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoNormalFooter.swift; sourceTree = "<group>"; };
+		6CA99A071EC56D210025D36D /* LLRefreshAutoStateFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshAutoStateFooter.swift; sourceTree = "<group>"; };
+		6CA99A091EC56D210025D36D /* LLRefreshGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshGifHeader.swift; sourceTree = "<group>"; };
+		6CA99A0A1EC56D210025D36D /* LLRefreshNormalHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshNormalHeader.swift; sourceTree = "<group>"; };
+		6CA99A0B1EC56D210025D36D /* LLRefreshStateHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshStateHeader.swift; sourceTree = "<group>"; };
+		6CA99A0D1EC56D210025D36D /* UILabel+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+LLExtension.swift"; sourceTree = "<group>"; };
+		6CA99A0E1EC56D210025D36D /* UIScrollView+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+LLExtension.swift"; sourceTree = "<group>"; };
+		6CA99A0F1EC56D210025D36D /* UIView+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LLExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CA999491EC5509E0025D36D /* LXLRefresh.framework in Frameworks */,
+				6CA999F61EC56CF70025D36D /* LLRefresh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,18 +159,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6CA999301EC5509E0025D36D /* Frameworks */ = {
+		6CA999DD1EC56CF70025D36D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6CA999391EC5509E0025D36D /* Frameworks */ = {
+		6CA999E61EC56CF70025D36D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CA9993D1EC5509E0025D36D /* LXLRefresh.framework in Frameworks */,
+				6CA999EA1EC56CF70025D36D /* LLRefresh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,8 +193,8 @@
 				6C2DF8D21DF2DAE600202268 /* LLRefreshDemo */,
 				6C2DF8E71DF2DAE600202268 /* LLRefreshDemoTests */,
 				6C2DF8F21DF2DAE600202268 /* LLRefreshDemoUITests */,
-				6CA999351EC5509E0025D36D /* LXLRefresh */,
-				6CA999421EC5509E0025D36D /* LXLRefreshTests */,
+				6CA999E21EC56CF70025D36D /* LLRefresh */,
+				6CA999EF1EC56CF70025D36D /* LLRefreshTests */,
 				6C2DF8D11DF2DAE600202268 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -205,8 +205,8 @@
 				6C2DF8D01DF2DAE600202268 /* LLRefreshDemo.app */,
 				6C2DF8E41DF2DAE600202268 /* LLRefreshDemoTests.xctest */,
 				6C2DF8EF1DF2DAE600202268 /* LLRefreshDemoUITests.xctest */,
-				6CA999341EC5509E0025D36D /* LXLRefresh.framework */,
-				6CA9993C1EC5509E0025D36D /* LXLRefreshTests.xctest */,
+				6CA999E11EC56CF70025D36D /* LLRefresh.framework */,
+				6CA999E91EC56CF70025D36D /* LLRefreshTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,73 +256,73 @@
 			path = Demos;
 			sourceTree = "<group>";
 		};
-		6CA999351EC5509E0025D36D /* LXLRefresh */ = {
+		6CA999E21EC56CF70025D36D /* LLRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				6CA999741EC566110025D36D /* Base */,
-				6CA999791EC566110025D36D /* Custom */,
-				6CA999831EC566110025D36D /* Extension */,
-				6CA999361EC5509E0025D36D /* LXLRefresh.h */,
-				6CA999371EC5509E0025D36D /* Info.plist */,
+				6CA999FE1EC56D210025D36D /* Base */,
+				6CA99A031EC56D210025D36D /* Custom */,
+				6CA99A0C1EC56D210025D36D /* Extension */,
+				6CA999E31EC56CF70025D36D /* LLRefresh.h */,
+				6CA999E41EC56CF70025D36D /* Info.plist */,
 			);
-			path = LXLRefresh;
+			path = LLRefresh;
 			sourceTree = "<group>";
 		};
-		6CA999421EC5509E0025D36D /* LXLRefreshTests */ = {
+		6CA999EF1EC56CF70025D36D /* LLRefreshTests */ = {
 			isa = PBXGroup;
 			children = (
-				6CA999431EC5509E0025D36D /* LXLRefreshTests.swift */,
-				6CA999451EC5509E0025D36D /* Info.plist */,
+				6CA999F01EC56CF70025D36D /* LLRefreshTests.swift */,
+				6CA999F21EC56CF70025D36D /* Info.plist */,
 			);
-			path = LXLRefreshTests;
+			path = LLRefreshTests;
 			sourceTree = "<group>";
 		};
-		6CA999741EC566110025D36D /* Base */ = {
+		6CA999FE1EC56D210025D36D /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				6CA999751EC566110025D36D /* LLBaseRefreshHeader.swift */,
-				6CA999761EC566110025D36D /* LLRefreshAutoFooter.swift */,
-				6CA999771EC566110025D36D /* LLRefreshFooter.swift */,
-				6CA999781EC566110025D36D /* LLRefreshHeader.swift */,
+				6CA999FF1EC56D210025D36D /* LLBaseRefreshHeader.swift */,
+				6CA99A001EC56D210025D36D /* LLRefreshAutoFooter.swift */,
+				6CA99A011EC56D210025D36D /* LLRefreshFooter.swift */,
+				6CA99A021EC56D210025D36D /* LLRefreshHeader.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
 		};
-		6CA999791EC566110025D36D /* Custom */ = {
+		6CA99A031EC56D210025D36D /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				6CA9997A1EC566110025D36D /* Footer */,
-				6CA9997E1EC566110025D36D /* Header */,
+				6CA99A041EC56D210025D36D /* Footer */,
+				6CA99A081EC56D210025D36D /* Header */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
 		};
-		6CA9997A1EC566110025D36D /* Footer */ = {
+		6CA99A041EC56D210025D36D /* Footer */ = {
 			isa = PBXGroup;
 			children = (
-				6CA9997B1EC566110025D36D /* LLRefreshAutoGifFooter.swift */,
-				6CA9997C1EC566110025D36D /* LLRefreshAutoNormalFooter.swift */,
-				6CA9997D1EC566110025D36D /* LLRefreshAutoStateFooter.swift */,
+				6CA99A051EC56D210025D36D /* LLRefreshAutoGifFooter.swift */,
+				6CA99A061EC56D210025D36D /* LLRefreshAutoNormalFooter.swift */,
+				6CA99A071EC56D210025D36D /* LLRefreshAutoStateFooter.swift */,
 			);
 			path = Footer;
 			sourceTree = "<group>";
 		};
-		6CA9997E1EC566110025D36D /* Header */ = {
+		6CA99A081EC56D210025D36D /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				6CA9997F1EC566110025D36D /* LLRefreshGifHeader.swift */,
-				6CA999801EC566110025D36D /* LLRefreshNormalHeader.swift */,
-				6CA999811EC566110025D36D /* LLRefreshStateHeader.swift */,
+				6CA99A091EC56D210025D36D /* LLRefreshGifHeader.swift */,
+				6CA99A0A1EC56D210025D36D /* LLRefreshNormalHeader.swift */,
+				6CA99A0B1EC56D210025D36D /* LLRefreshStateHeader.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
 		};
-		6CA999831EC566110025D36D /* Extension */ = {
+		6CA99A0C1EC56D210025D36D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				6CA999841EC566110025D36D /* UILabel+LLExtension.swift */,
-				6CA999851EC566110025D36D /* UIScrollView+LLExtension.swift */,
-				6CA999861EC566110025D36D /* UIView+LLExtension.swift */,
+				6CA99A0D1EC56D210025D36D /* UILabel+LLExtension.swift */,
+				6CA99A0E1EC56D210025D36D /* UIScrollView+LLExtension.swift */,
+				6CA99A0F1EC56D210025D36D /* UIView+LLExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -330,11 +330,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6CA999311EC5509E0025D36D /* Headers */ = {
+		6CA999DE1EC56CF70025D36D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CA999461EC5509E0025D36D /* LXLRefresh.h in Headers */,
+				6CA999F31EC56CF70025D36D /* LLRefresh.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +353,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				6CA999481EC5509E0025D36D /* PBXTargetDependency */,
+				6CA999F51EC56CF70025D36D /* PBXTargetDependency */,
 			);
 			name = LLRefreshDemo;
 			productName = LLRefreshDemo;
@@ -396,41 +396,41 @@
 			productReference = 6C2DF8EF1DF2DAE600202268 /* LLRefreshDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		6CA999331EC5509E0025D36D /* LXLRefresh */ = {
+		6CA999E01EC56CF70025D36D /* LLRefresh */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6CA999501EC5509E0025D36D /* Build configuration list for PBXNativeTarget "LXLRefresh" */;
+			buildConfigurationList = 6CA999F81EC56CF70025D36D /* Build configuration list for PBXNativeTarget "LLRefresh" */;
 			buildPhases = (
-				6CA9992F1EC5509E0025D36D /* Sources */,
-				6CA999301EC5509E0025D36D /* Frameworks */,
-				6CA999311EC5509E0025D36D /* Headers */,
-				6CA999321EC5509E0025D36D /* Resources */,
+				6CA999DC1EC56CF70025D36D /* Sources */,
+				6CA999DD1EC56CF70025D36D /* Frameworks */,
+				6CA999DE1EC56CF70025D36D /* Headers */,
+				6CA999DF1EC56CF70025D36D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LXLRefresh;
-			productName = LXLRefresh;
-			productReference = 6CA999341EC5509E0025D36D /* LXLRefresh.framework */;
+			name = LLRefresh;
+			productName = LLRefresh;
+			productReference = 6CA999E11EC56CF70025D36D /* LLRefresh.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6CA9993B1EC5509E0025D36D /* LXLRefreshTests */ = {
+		6CA999E81EC56CF70025D36D /* LLRefreshTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6CA999511EC5509E0025D36D /* Build configuration list for PBXNativeTarget "LXLRefreshTests" */;
+			buildConfigurationList = 6CA999FB1EC56CF70025D36D /* Build configuration list for PBXNativeTarget "LLRefreshTests" */;
 			buildPhases = (
-				6CA999381EC5509E0025D36D /* Sources */,
-				6CA999391EC5509E0025D36D /* Frameworks */,
-				6CA9993A1EC5509E0025D36D /* Resources */,
+				6CA999E51EC56CF70025D36D /* Sources */,
+				6CA999E61EC56CF70025D36D /* Frameworks */,
+				6CA999E71EC56CF70025D36D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6CA9993F1EC5509E0025D36D /* PBXTargetDependency */,
-				6CA999411EC5509E0025D36D /* PBXTargetDependency */,
+				6CA999EC1EC56CF70025D36D /* PBXTargetDependency */,
+				6CA999EE1EC56CF70025D36D /* PBXTargetDependency */,
 			);
-			name = LXLRefreshTests;
-			productName = LXLRefreshTests;
-			productReference = 6CA9993C1EC5509E0025D36D /* LXLRefreshTests.xctest */;
+			name = LLRefreshTests;
+			productName = LLRefreshTests;
+			productReference = 6CA999E91EC56CF70025D36D /* LLRefreshTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -457,11 +457,11 @@
 						LastSwiftMigration = 0820;
 						TestTargetID = 6C2DF8CF1DF2DAE600202268;
 					};
-					6CA999331EC5509E0025D36D = {
+					6CA999E01EC56CF70025D36D = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
-					6CA9993B1EC5509E0025D36D = {
+					6CA999E81EC56CF70025D36D = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 6C2DF8CF1DF2DAE600202268;
@@ -484,8 +484,8 @@
 				6C2DF8CF1DF2DAE600202268 /* LLRefreshDemo */,
 				6C2DF8E31DF2DAE600202268 /* LLRefreshDemoTests */,
 				6C2DF8EE1DF2DAE600202268 /* LLRefreshDemoUITests */,
-				6CA999331EC5509E0025D36D /* LXLRefresh */,
-				6CA9993B1EC5509E0025D36D /* LXLRefreshTests */,
+				6CA999E01EC56CF70025D36D /* LLRefresh */,
+				6CA999E81EC56CF70025D36D /* LLRefreshTests */,
 			);
 		};
 /* End PBXProject section */
@@ -515,14 +515,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6CA999321EC5509E0025D36D /* Resources */ = {
+		6CA999DF1EC56CF70025D36D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6CA9993A1EC5509E0025D36D /* Resources */ = {
+		6CA999E71EC56CF70025D36D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -564,31 +564,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6CA9992F1EC5509E0025D36D /* Sources */ = {
+		6CA999DC1EC56CF70025D36D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CA9998A1EC566110025D36D /* LLRefreshHeader.swift in Sources */,
-				6CA9998E1EC566110025D36D /* LLRefreshGifHeader.swift in Sources */,
-				6CA999911EC566110025D36D /* UILabel+LLExtension.swift in Sources */,
-				6CA999901EC566110025D36D /* LLRefreshStateHeader.swift in Sources */,
-				6CA9998B1EC566110025D36D /* LLRefreshAutoGifFooter.swift in Sources */,
-				6CA9998C1EC566110025D36D /* LLRefreshAutoNormalFooter.swift in Sources */,
-				6CA999871EC566110025D36D /* LLBaseRefreshHeader.swift in Sources */,
-				6CA9998F1EC566110025D36D /* LLRefreshNormalHeader.swift in Sources */,
-				6CA999881EC566110025D36D /* LLRefreshAutoFooter.swift in Sources */,
-				6CA999931EC566110025D36D /* UIView+LLExtension.swift in Sources */,
-				6CA999921EC566110025D36D /* UIScrollView+LLExtension.swift in Sources */,
-				6CA9998D1EC566110025D36D /* LLRefreshAutoStateFooter.swift in Sources */,
-				6CA999891EC566110025D36D /* LLRefreshFooter.swift in Sources */,
+				6CA99A131EC56D210025D36D /* LLRefreshHeader.swift in Sources */,
+				6CA99A171EC56D210025D36D /* LLRefreshGifHeader.swift in Sources */,
+				6CA99A1A1EC56D210025D36D /* UILabel+LLExtension.swift in Sources */,
+				6CA99A191EC56D210025D36D /* LLRefreshStateHeader.swift in Sources */,
+				6CA99A141EC56D210025D36D /* LLRefreshAutoGifFooter.swift in Sources */,
+				6CA99A151EC56D210025D36D /* LLRefreshAutoNormalFooter.swift in Sources */,
+				6CA99A101EC56D210025D36D /* LLBaseRefreshHeader.swift in Sources */,
+				6CA99A181EC56D210025D36D /* LLRefreshNormalHeader.swift in Sources */,
+				6CA99A111EC56D210025D36D /* LLRefreshAutoFooter.swift in Sources */,
+				6CA99A1C1EC56D210025D36D /* UIView+LLExtension.swift in Sources */,
+				6CA99A1B1EC56D210025D36D /* UIScrollView+LLExtension.swift in Sources */,
+				6CA99A161EC56D210025D36D /* LLRefreshAutoStateFooter.swift in Sources */,
+				6CA99A121EC56D210025D36D /* LLRefreshFooter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6CA999381EC5509E0025D36D /* Sources */ = {
+		6CA999E51EC56CF70025D36D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CA999441EC5509E0025D36D /* LXLRefreshTests.swift in Sources */,
+				6CA999F11EC56CF70025D36D /* LLRefreshTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,20 +605,20 @@
 			target = 6C2DF8CF1DF2DAE600202268 /* LLRefreshDemo */;
 			targetProxy = 6C2DF8F01DF2DAE600202268 /* PBXContainerItemProxy */;
 		};
-		6CA9993F1EC5509E0025D36D /* PBXTargetDependency */ = {
+		6CA999EC1EC56CF70025D36D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6CA999331EC5509E0025D36D /* LXLRefresh */;
-			targetProxy = 6CA9993E1EC5509E0025D36D /* PBXContainerItemProxy */;
+			target = 6CA999E01EC56CF70025D36D /* LLRefresh */;
+			targetProxy = 6CA999EB1EC56CF70025D36D /* PBXContainerItemProxy */;
 		};
-		6CA999411EC5509E0025D36D /* PBXTargetDependency */ = {
+		6CA999EE1EC56CF70025D36D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6C2DF8CF1DF2DAE600202268 /* LLRefreshDemo */;
-			targetProxy = 6CA999401EC5509E0025D36D /* PBXContainerItemProxy */;
+			targetProxy = 6CA999ED1EC56CF70025D36D /* PBXContainerItemProxy */;
 		};
-		6CA999481EC5509E0025D36D /* PBXTargetDependency */ = {
+		6CA999F51EC56CF70025D36D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6CA999331EC5509E0025D36D /* LXLRefresh */;
-			targetProxy = 6CA999471EC5509E0025D36D /* PBXContainerItemProxy */;
+			target = 6CA999E01EC56CF70025D36D /* LLRefresh */;
+			targetProxy = 6CA999F41EC56CF70025D36D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -810,7 +810,7 @@
 			};
 			name = Release;
 		};
-		6CA9994C1EC5509E0025D36D /* Debug */ = {
+		6CA999F91EC56CF70025D36D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -822,21 +822,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LXLRefresh/Info.plist;
+				INFOPLIST_FILE = LLRefresh/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LXLRefresh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		6CA9994D1EC5509E0025D36D /* Release */ = {
+		6CA999FA1EC56CF70025D36D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -848,31 +849,32 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LXLRefresh/Info.plist;
+				INFOPLIST_FILE = LLRefresh/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LXLRefresh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		6CA9994E1EC5509E0025D36D /* Debug */ = {
+		6CA999FC1EC56CF70025D36D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				INFOPLIST_FILE = LXLRefreshTests/Info.plist;
+				INFOPLIST_FILE = LLRefreshTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LXLRefreshTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefreshTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 3.0;
@@ -880,17 +882,17 @@
 			};
 			name = Debug;
 		};
-		6CA9994F1EC5509E0025D36D /* Release */ = {
+		6CA999FD1EC56CF70025D36D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				INFOPLIST_FILE = LXLRefreshTests/Info.plist;
+				INFOPLIST_FILE = LLRefreshTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LXLRefreshTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wildcat.LLRefreshTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
@@ -937,20 +939,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6CA999501EC5509E0025D36D /* Build configuration list for PBXNativeTarget "LXLRefresh" */ = {
+		6CA999F81EC56CF70025D36D /* Build configuration list for PBXNativeTarget "LLRefresh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6CA9994C1EC5509E0025D36D /* Debug */,
-				6CA9994D1EC5509E0025D36D /* Release */,
+				6CA999F91EC56CF70025D36D /* Debug */,
+				6CA999FA1EC56CF70025D36D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6CA999511EC5509E0025D36D /* Build configuration list for PBXNativeTarget "LXLRefreshTests" */ = {
+		6CA999FB1EC56CF70025D36D /* Build configuration list for PBXNativeTarget "LLRefreshTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6CA9994E1EC5509E0025D36D /* Debug */,
-				6CA9994F1EC5509E0025D36D /* Release */,
+				6CA999FC1EC56CF70025D36D /* Debug */,
+				6CA999FD1EC56CF70025D36D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

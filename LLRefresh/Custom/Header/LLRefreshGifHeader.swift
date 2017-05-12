@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LLRefreshGifHeader: LLRefreshStateHeader {
+open class LLRefreshGifHeader: LLRefreshStateHeader {
     lazy var gifView: UIImageView = {
         let gifView = UIImageView()
         self.addSubview(gifView)
@@ -17,7 +17,7 @@ class LLRefreshGifHeader: LLRefreshStateHeader {
     var stateImages: [LLRefreshState: [UIImage]] = [:]
     var stateDurations: [LLRefreshState: TimeInterval] = [:]
     
-    override var _pullingPercent:CGFloat {
+    override open var _pullingPercent:CGFloat {
         didSet{
             guard !isRefreshing else {
                 return
@@ -37,7 +37,7 @@ class LLRefreshGifHeader: LLRefreshStateHeader {
     }
     
     //MARK: - Public
-    func setImages(images: [UIImage]?, state: LLRefreshState, duration: TimeInterval? = -1)  {
+    open func setImages(images: [UIImage]?, state: LLRefreshState, duration: TimeInterval? = -1)  {
         guard let imgs = images , imgs.count > 0 else {
             return
         }
@@ -50,11 +50,11 @@ class LLRefreshGifHeader: LLRefreshStateHeader {
         }
     }
     //MARK: - Parents fucntion
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
         labelLeftInset = 20
     }
-    override func placeSubViews() {
+    override open func placeSubViews() {
         super.placeSubViews()
         guard gifView.constraints.count == 0 else {
             return

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LLRefreshAutoNormalFooter: LLRefreshAutoStateFooter {
+open class LLRefreshAutoNormalFooter: LLRefreshAutoStateFooter {
     var activityIndicatorViewStyle: UIActivityIndicatorViewStyle = .gray{
         didSet{
             setNeedsLayout()

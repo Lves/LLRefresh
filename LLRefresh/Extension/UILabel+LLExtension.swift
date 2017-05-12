@@ -33,14 +33,14 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 
 extension String {
-    var ll_length: Int {
+    public var ll_length: Int {
         return self.characters.count
     }
 }
 
 extension UILabel{
     
-    var ll_textWidth:CGFloat {
+    public var ll_textWidth:CGFloat {
         get{
             var width:CGFloat? = 0
             if self.text?.ll_length > 0 {

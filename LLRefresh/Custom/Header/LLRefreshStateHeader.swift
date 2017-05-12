@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LLRefreshStateHeader: LLRefreshHeader {
+open class LLRefreshStateHeader: LLRefreshHeader {
     
     lazy var stateLabel: UILabel = {
         let label = UILabel()
@@ -35,7 +35,7 @@ class LLRefreshStateHeader: LLRefreshHeader {
     var labelLeftInset:CGFloat = 0
     
     //MARK: -  集成父类方法
-    override func placeSubViews() {
+    override open func placeSubViews() {
         super.placeSubViews()
         guard !stateLabel.isHidden else {
             return
@@ -62,7 +62,7 @@ class LLRefreshStateHeader: LLRefreshHeader {
  
     }
     
-    override func prepare() {
+    override open func prepare() {
         super.prepare()
         // 初始化间距
         labelLeftInset = LLConstant.RefreshLabelLeftInset
