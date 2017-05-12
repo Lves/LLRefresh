@@ -7,9 +7,8 @@
 //
 
 import UIKit
-
+import LXLRefresh
 class LLEatFooter: LLRefreshAutoGifFooter {
-    
     
     override func prepare() {
         super.prepare()

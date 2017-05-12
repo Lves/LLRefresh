@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LXLRefresh
 
 class BgImageRefreshViewController: UIViewController {
 

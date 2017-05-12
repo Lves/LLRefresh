@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import LXLRefresh
 class StateRefreshViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var dataArray:[String] = []
