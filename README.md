@@ -21,7 +21,9 @@
 
 #### 1. CocoaPods
 
-
+```
+pod 'LXLRefresh'
+```
 
 #### 2. SourceCode
 
