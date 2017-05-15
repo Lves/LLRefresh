@@ -14,7 +14,8 @@ open class LLRefreshNormalHeader: LLRefreshStateHeader {
         }
     }
     fileprivate lazy var arrowView: UIImageView = {
-        let arrowView = UIImageView(image: UIImage(named: "arrow"))
+        let image = Bundle.main.ll_arrowImage
+        let arrowView = UIImageView(image: image)
         self.addSubview(arrowView)
         return arrowView
     }()

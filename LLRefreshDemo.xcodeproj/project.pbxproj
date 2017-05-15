@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6C069A131E34865F001A0C51 /* LLEatHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C069A121E34865F001A0C51 /* LLEatHeader.swift */; };
+		6C1252591EC94C6800E0E82C /* LLRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6C1252581EC94C6800E0E82C /* LLRefresh.bundle */; };
+		6C12525F1EC9503400E0E82C /* NSBundle+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C12525E1EC9503400E0E82C /* NSBundle+LLExtension.swift */; };
 		6C2DF8D41DF2DAE600202268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2DF8D31DF2DAE600202268 /* AppDelegate.swift */; };
 		6C2DF8D61DF2DAE600202268 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2DF8D51DF2DAE600202268 /* ViewController.swift */; };
 		6C2DF8D91DF2DAE600202268 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C2DF8D71DF2DAE600202268 /* Main.storyboard */; };
@@ -95,6 +97,8 @@
 
 /* Begin PBXFileReference section */
 		6C069A121E34865F001A0C51 /* LLEatHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLEatHeader.swift; sourceTree = "<group>"; };
+		6C1252581EC94C6800E0E82C /* LLRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LLRefresh.bundle; sourceTree = "<group>"; };
+		6C12525E1EC9503400E0E82C /* NSBundle+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBundle+LLExtension.swift"; sourceTree = "<group>"; };
 		6C2DF8D01DF2DAE600202268 /* LLRefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLRefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2DF8D31DF2DAE600202268 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C2DF8D51DF2DAE600202268 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -259,10 +263,11 @@
 		6CA999E21EC56CF70025D36D /* LLRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				6CA999E31EC56CF70025D36D /* LLRefresh.h */,
 				6CA999FE1EC56D210025D36D /* Base */,
 				6CA99A031EC56D210025D36D /* Custom */,
 				6CA99A0C1EC56D210025D36D /* Extension */,
-				6CA999E31EC56CF70025D36D /* LLRefresh.h */,
+				6C1252581EC94C6800E0E82C /* LLRefresh.bundle */,
 				6CA999E41EC56CF70025D36D /* Info.plist */,
 			);
 			path = LLRefresh;
@@ -323,6 +328,7 @@
 				6CA99A0D1EC56D210025D36D /* UILabel+LLExtension.swift */,
 				6CA99A0E1EC56D210025D36D /* UIScrollView+LLExtension.swift */,
 				6CA99A0F1EC56D210025D36D /* UIView+LLExtension.swift */,
+				6C12525E1EC9503400E0E82C /* NSBundle+LLExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -459,6 +465,7 @@
 					};
 					6CA999E01EC56CF70025D36D = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					6CA999E81EC56CF70025D36D = {
@@ -519,6 +526,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C1252591EC94C6800E0E82C /* LLRefresh.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +582,7 @@
 				6CA99A191EC56D210025D36D /* LLRefreshStateHeader.swift in Sources */,
 				6CA99A141EC56D210025D36D /* LLRefreshAutoGifFooter.swift in Sources */,
 				6CA99A151EC56D210025D36D /* LLRefreshAutoNormalFooter.swift in Sources */,
+				6C12525F1EC9503400E0E82C /* NSBundle+LLExtension.swift in Sources */,
 				6CA99A101EC56D210025D36D /* LLBaseRefreshHeader.swift in Sources */,
 				6CA99A181EC56D210025D36D /* LLRefreshNormalHeader.swift in Sources */,
 				6CA99A111EC56D210025D36D /* LLRefreshAutoFooter.swift in Sources */,
@@ -813,6 +822,7 @@
 		6CA999F91EC56CF70025D36D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -830,6 +840,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -840,6 +851,7 @@
 		6CA999FA1EC56CF70025D36D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
