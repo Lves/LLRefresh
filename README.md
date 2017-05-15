@@ -78,5 +78,7 @@ tableView.ll_header?.beginRefreshing()
 
 ![bgheader](https://github.com/Lves/LLRefresh/blob/master/Docs/QQLLRefresh_gif.gif)
 
+4. Refresh footer
 
+<iframe height=498 width=510 src="https://github.com/Lves/LLRefresh/blob/master/Docs/footer_movie.mp4">
 
