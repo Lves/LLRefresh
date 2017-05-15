@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "LXLRefresh"
   s.module_name = 'LLRefresh'
-  s.version      = "0.0.3"
+  s.version      = "0.0.5"
   s.summary      = "LLRefresh is a pull&push to refresh library written in Swift"
 
   # This description is used to generate tags and improve search results.
