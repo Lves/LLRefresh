@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "LXLRefresh"
   s.module_name  = 'LLRefresh'
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.summary      = "LLRefresh is a pull&push to refresh library written in Swift"
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "LLRefresh/**" , "LLRefresh/**/**/*.swift" , "LLRefresh/**/*.swift", "LLRefresh/*.bundle"
+  s.source_files  = "LLRefresh/**/*" , "LLRefresh/**/**/*.swift" , "LLRefresh/**/*.swift"
+
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -105,7 +106,7 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  # s.resource  = "icon.png"
+  s.resource  = "LLRefresh/LLRefresh.bundle"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
