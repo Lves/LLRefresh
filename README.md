@@ -30,6 +30,11 @@ pod 'LXLRefresh'
 
 
 ### Usage
+引入Module
+```swift
+import LLRefresh
+```
+
 使用时可以使用target或者block
 
 - Block
