@@ -80,5 +80,5 @@ tableView.ll_header?.beginRefreshing()
 
 4. Refresh footer
 
-<iframe height=498 width=510 src="https://github.com/Lves/LLRefresh/blob/master/Docs/footer_movie.mp4">
+![footer](https://github.com/Lves/LLRefresh/blob/master/Docs/footer.gif)
 
