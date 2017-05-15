@@ -78,5 +78,6 @@ tableView.ll_header?.beginRefreshing()
 
 ![bgheader](https://github.com/Lves/LLRefresh/blob/master/Docs/QQLLRefresh_gif.gif)
 
-
+4. Refresh footer
+![footer](https://github.com/Lves/LLRefresh/blob/master/Docs/footer_movie.mp4)
 
