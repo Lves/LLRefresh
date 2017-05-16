@@ -31,8 +31,8 @@ open class LLRefreshStateHeader: LLRefreshHeader {
     
     fileprivate var stateTitles:[Int:String] = [:]
     
-    var lastUpdatedTimeText:((Date?)->())?
-    var labelLeftInset:CGFloat = 0
+    open var lastUpdatedTimeText:((Date?)->())?
+    public var labelLeftInset:CGFloat = 0
     
     //MARK: -  集成父类方法
     override open func placeSubViews() {
@@ -73,7 +73,7 @@ open class LLRefreshStateHeader: LLRefreshHeader {
         
         setLastUpdateTimeLable()
     }
-    override func setState(_ state: LLRefreshState) {
+    override open func setState(_ state: LLRefreshState) {
         super.setState(state)
         stateLabel.text = stateTitles[refreshState.rawValue]
         setLastUpdateTimeLable()
@@ -116,7 +116,7 @@ open class LLRefreshStateHeader: LLRefreshHeader {
         }
     }
     //MARK: - Public 
-    func setTitle(_ title:String?, state:LLRefreshState)  {
+    open func setTitle(_ title:String?, state:LLRefreshState)  {
         if let title = title {
             stateTitles[state.rawValue] = title
             stateLabel.text = stateTitles[refreshState.rawValue]

@@ -29,7 +29,7 @@ open class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
         stateLabel.isUserInteractionEnabled = true
         stateLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(stateLabelClick)))
     }
-    override func setState(_ state: LLRefreshState) {
+    override open func setState(_ state: LLRefreshState) {
         super.setState(state)
         
         if refreshingTitleHidden && state == .refreshing{
@@ -37,7 +37,7 @@ open class LLRefreshAutoStateFooter: LLRefreshAutoFooter {
         }
         stateLabel.text = stateTitles[refreshState.rawValue]
     }
-    override func placeSubViews() {
+    override open func placeSubViews() {
         super.placeSubViews()
         guard stateLabel.constraints.count == 0 else{
             return

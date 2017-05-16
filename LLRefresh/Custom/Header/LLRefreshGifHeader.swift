@@ -14,8 +14,8 @@ open class LLRefreshGifHeader: LLRefreshStateHeader {
         self.addSubview(gifView)
         return gifView
     }()
-    var stateImages: [LLRefreshState: [UIImage]] = [:]
-    var stateDurations: [LLRefreshState: TimeInterval] = [:]
+    fileprivate var stateImages: [LLRefreshState: [UIImage]] = [:]
+    fileprivate var stateDurations: [LLRefreshState: TimeInterval] = [:]
     
     override open var _pullingPercent:CGFloat {
         didSet{
@@ -73,7 +73,7 @@ open class LLRefreshGifHeader: LLRefreshStateHeader {
             gifView.ll_w = ll_w * 0.5 - textW * 0.5 - labelLeftInset
         }
     }
-    override func setState(_ state: LLRefreshState) {
+    override open func setState(_ state: LLRefreshState) {
         super.setState(state)
         if state == .pulling || state == .refreshing {
             let images = stateImages[state]

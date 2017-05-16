@@ -78,7 +78,6 @@ open class LLBaseRefreshHeader: UIView {
     override open func layoutSubviews() {
         placeSubViews()
         super.layoutSubviews()
-        
     }
     override  open func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -166,11 +165,25 @@ open class LLBaseRefreshHeader: UIView {
         self.refreshingTarget = target
         self.refreshingAction = action
     }
-    
-    //MARK: - private
-    func placeSubViews()  {
+    open func placeSubViews()  {
     }
     
+    
+    
+    open  func prepare(){
+        autoresizingMask = .flexibleWidth
+        backgroundColor = UIColor.clear
+    }
+    open  func updateUI()  {
+        DispatchQueue.main.async { [weak self] _ in
+            self?.setNeedsLayout()
+        }
+    }
+    open func setState(_ state:LLRefreshState) {
+        refreshState = state
+        updateUI()
+    }
+    //MARK: - private
     func executeRefreshingCallback() {
         DispatchQueue.main.async(execute: {[weak self] _ in
             if let refreshingBlock = self?.refreshingBlock {
@@ -185,21 +198,6 @@ open class LLBaseRefreshHeader: UIView {
                 beginRefreshingCompletionBlock()
             }
         })
-    }
-    
-    
-    open  func prepare(){
-        autoresizingMask = .flexibleWidth
-        backgroundColor = UIColor.clear
-    }
-    open  func updateUI()  {
-        DispatchQueue.main.async { [weak self] _ in
-            self?.setNeedsLayout()
-        }
-    }
-    func setState(_ state:LLRefreshState) {
-        refreshState = state
-        updateUI()
     }
     
     func removeLLObservers()  {

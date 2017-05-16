@@ -52,7 +52,7 @@ open class LLRefreshNormalHeader: LLRefreshStateHeader {
 
         arrowView.tintColor = stateLabel.textColor
     }
-    override func setState(_ state: LLRefreshState) {
+    override open func setState(_ state: LLRefreshState) {
         let old = refreshState
         super.setState(state)
         if state == .normal {

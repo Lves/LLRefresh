@@ -14,8 +14,8 @@ open class LLRefreshAutoGifFooter: LLRefreshAutoStateFooter {
         self.addSubview(gifView)
         return gifView
     }()
-    var stateImages: [LLRefreshState: [UIImage]] = [:]
-    var stateDurations: [LLRefreshState: TimeInterval] = [:]
+    fileprivate var stateImages: [LLRefreshState: [UIImage]] = [:]
+    fileprivate var stateDurations: [LLRefreshState: TimeInterval] = [:]
     //MARK: - Public
     open func setImages(images: [UIImage]?, state: LLRefreshState, duration: TimeInterval? = -1)  {
         guard let imgs = images , imgs.count > 0 else {
@@ -36,7 +36,7 @@ open class LLRefreshAutoGifFooter: LLRefreshAutoStateFooter {
         super.prepare()
         labelLeftInset = 20
     }
-    override func placeSubViews() {
+    override open func placeSubViews() {
         super.placeSubViews()
         guard gifView.constraints.count == 0 else {
             return
@@ -50,7 +50,7 @@ open class LLRefreshAutoGifFooter: LLRefreshAutoStateFooter {
             gifView.ll_w = ll_w * 0.5 - stateW * 0.5 - labelLeftInset
         }
     }
-    override func setState(_ state: LLRefreshState) {
+    override open func setState(_ state: LLRefreshState) {
         super.setState(state)
         if state == .refreshing {
             let images = stateImages[state]

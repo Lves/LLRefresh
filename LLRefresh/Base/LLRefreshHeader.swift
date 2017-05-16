@@ -71,9 +71,9 @@ open class LLRefreshHeader: LLBaseRefreshHeader {
         fatalError("init(coder:) has not been implemented")
     }
     /** 忽略多少scrollView的contentInset的top */
-    var ignoredScrollViewContentInsetTop:CGFloat = 0
+    open var ignoredScrollViewContentInsetTop:CGFloat = 0
 
-    override func setState(_ state:LLRefreshState) {
+    override open func setState(_ state:LLRefreshState) {
         let oldValue = refreshState
         guard state != oldValue else {
             return
@@ -128,8 +128,6 @@ open class LLRefreshHeader: LLBaseRefreshHeader {
             //1.2 下拉距离和content顶部距离使用小的那个
             let contentTopH:CGFloat = self.ll_h + (_scrollViewOriginalInset?.top ?? 0)
             insetT = insetT > contentTopH ? contentTopH : insetT;
-            
-//            _scrollView?.ll_insetT = insetT ?? 0
             self._scrollView?.contentInset = UIEdgeInsetsMake(insetT ?? 0, 0, 0, 0)
             
             self.insetTDelta = (_scrollViewOriginalInset?.top ?? 0) - (insetT ?? 0)
@@ -161,8 +159,6 @@ open class LLRefreshHeader: LLBaseRefreshHeader {
             _pullingPercent = pullingPercent
         }
     }
-
-    //MARK: - public
     override open func endRefreshing()  {
         DispatchQueue.main.async(execute: {
             self.setState(.normal)

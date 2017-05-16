@@ -103,7 +103,7 @@ open class LLRefreshAutoFooter: LLRefreshFooter {
         }
     }
     
-    override func setState(_ state: LLRefreshState) {
+    override open func setState(_ state: LLRefreshState) {
         let oldValue = refreshState
         guard state != oldValue else {
             return

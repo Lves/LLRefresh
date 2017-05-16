@@ -20,7 +20,7 @@ open class LLRefreshAutoNormalFooter: LLRefreshAutoStateFooter {
         self.addSubview(loadingView)
         return loadingView
     }()
-    override func placeSubViews() {
+    override open func placeSubViews() {
         super.placeSubViews()
         
         guard loadingView.constraints.count == 0 else {
@@ -35,7 +35,7 @@ open class LLRefreshAutoNormalFooter: LLRefreshAutoStateFooter {
         
         loadingView.tintColor = stateLabel.textColor
     }
-    override func setState(_ state: LLRefreshState) {
+    override open func setState(_ state: LLRefreshState) {
         super.setState(state)
        
         if state == .noMoreData || state == .normal {
