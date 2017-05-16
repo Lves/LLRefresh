@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6C069A131E34865F001A0C51 /* LLEatHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C069A121E34865F001A0C51 /* LLEatHeader.swift */; };
+		6C0A23A51ECAD5E90053B72E /* ArrowRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0A23A41ECAD5E90053B72E /* ArrowRefreshViewController.swift */; };
+		6C0A23A91ECAE1230053B72E /* LLCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0A23A81ECAE1230053B72E /* LLCustomHeader.swift */; };
+		6C0A23AB1ECAE22F0053B72E /* CustomRefreshTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0A23AA1ECAE22F0053B72E /* CustomRefreshTableViewController.swift */; };
 		6C1252591EC94C6800E0E82C /* LLRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6C1252581EC94C6800E0E82C /* LLRefresh.bundle */; };
 		6C12525F1EC9503400E0E82C /* NSBundle+LLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C12525E1EC9503400E0E82C /* NSBundle+LLExtension.swift */; };
 		6C2DF8D41DF2DAE600202268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2DF8D31DF2DAE600202268 /* AppDelegate.swift */; };
@@ -97,6 +100,9 @@
 
 /* Begin PBXFileReference section */
 		6C069A121E34865F001A0C51 /* LLEatHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLEatHeader.swift; sourceTree = "<group>"; };
+		6C0A23A41ECAD5E90053B72E /* ArrowRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowRefreshViewController.swift; sourceTree = "<group>"; };
+		6C0A23A81ECAE1230053B72E /* LLCustomHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCustomHeader.swift; sourceTree = "<group>"; };
+		6C0A23AA1ECAE22F0053B72E /* CustomRefreshTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRefreshTableViewController.swift; sourceTree = "<group>"; };
 		6C1252581EC94C6800E0E82C /* LLRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LLRefresh.bundle; sourceTree = "<group>"; };
 		6C12525E1EC9503400E0E82C /* NSBundle+LLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBundle+LLExtension.swift"; sourceTree = "<group>"; };
 		6C2DF8D01DF2DAE600202268 /* LLRefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLRefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +193,7 @@
 				6C9624FD1E6EB087005D4A18 /* LLRefreshBGImageHeader.swift */,
 				6C069A121E34865F001A0C51 /* LLEatHeader.swift */,
 				6C4F3E171E67F69400446C84 /* LLEatFooter.swift */,
+				6C0A23A81ECAE1230053B72E /* LLCustomHeader.swift */,
 			);
 			path = Customer;
 			sourceTree = "<group>";
@@ -256,6 +263,8 @@
 				6C9624F91E6EAEE4005D4A18 /* NormalRefreshViewController.swift */,
 				6C9624FB1E6EAFCF005D4A18 /* GifRefreshViewController.swift */,
 				6C9624FF1E6EB300005D4A18 /* BgImageRefreshViewController.swift */,
+				6C0A23A41ECAD5E90053B72E /* ArrowRefreshViewController.swift */,
+				6C0A23AA1ECAE22F0053B72E /* CustomRefreshTableViewController.swift */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -548,10 +557,13 @@
 				6C2DF8D61DF2DAE600202268 /* ViewController.swift in Sources */,
 				6C4F3E181E67F69400446C84 /* LLEatFooter.swift in Sources */,
 				6C9624FA1E6EAEE4005D4A18 /* NormalRefreshViewController.swift in Sources */,
+				6C0A23A91ECAE1230053B72E /* LLCustomHeader.swift in Sources */,
 				6C9624FE1E6EB087005D4A18 /* LLRefreshBGImageHeader.swift in Sources */,
 				6C2DF9121DF2DE2F00202268 /* StateRefreshViewController.swift in Sources */,
 				6C9624FC1E6EAFCF005D4A18 /* GifRefreshViewController.swift in Sources */,
 				6C2DF8D41DF2DAE600202268 /* AppDelegate.swift in Sources */,
+				6C0A23A51ECAD5E90053B72E /* ArrowRefreshViewController.swift in Sources */,
+				6C0A23AB1ECAE22F0053B72E /* CustomRefreshTableViewController.swift in Sources */,
 				6C069A131E34865F001A0C51 /* LLEatHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

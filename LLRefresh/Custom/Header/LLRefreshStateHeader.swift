@@ -122,4 +122,10 @@ open class LLRefreshStateHeader: LLRefreshHeader {
             stateLabel.text = stateTitles[refreshState.rawValue]
         }
     }
+    public func setStateLabelHidden(isHidden:Bool){
+        stateLabel.isHidden = isHidden
+    }
+    public func setLastUpdatedTimeLabelHidden(isHidden:Bool){
+        lastUpdatedTimeLabel.isHidden = isHidden
+    }
 }

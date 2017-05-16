@@ -33,7 +33,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
 
-        dataArray = ["StateRefreshViewController","NormalRefreshViewController","GifRefreshViewController","BgImageRefreshViewController"]
+        dataArray = ["StateRefreshViewController",
+                     "NormalRefreshViewController",
+                     "GifRefreshViewController",
+                     "BgImageRefreshViewController",
+                     "ArrowRefreshViewController",
+                     "CustomRefreshTableViewController"]
     }
     //MARK: delegate&datasource
     func numberOfSections(in tableView: UITableView) -> Int {
