@@ -38,14 +38,12 @@ open class LLRefreshAutoFooter: LLRefreshFooter {
         super.willMove(toSuperview: newSuperview)
         if (newSuperview != nil) {
             if !isHidden {
-                let inset = _scrollView?.contentInset ?? UIEdgeInsets.zero
-                _scrollView?.contentInset = UIEdgeInsetsMake(inset.top, inset.left, inset.bottom+ll_h, inset.right)
+                _scrollView?.ll_insetBottom += ll_h
             }
             ll_y = _scrollView?.ll_contentH ?? 0
         }else {
             if !isHidden {
-                let inset = _scrollView?.contentInset ?? UIEdgeInsets.zero
-                _scrollView?.contentInset = UIEdgeInsetsMake(inset.top, inset.left, inset.bottom-ll_h, inset.right)
+                _scrollView?.ll_insetBottom -= ll_h
             }
         }
     }
@@ -68,9 +66,9 @@ open class LLRefreshAutoFooter: LLRefreshFooter {
             return
         }
         //内容超过一个屏幕
-        if scrollView.contentInset.top + scrollView.ll_contentH > scrollView.ll_h{
+        if scrollView.ll_insetTop + scrollView.ll_contentH > scrollView.ll_h{
             // 这里的_scrollView.mj_contentH替换掉self.mj_y更为合理
-            if (scrollView.ll_offsetY >= scrollView.ll_contentH - scrollView.ll_h + self.ll_h * self.triggerAutomaticallyRefreshPercent + scrollView.contentInset.bottom - self.ll_h) {
+            if (scrollView.ll_offsetY >= scrollView.ll_contentH - scrollView.ll_h + self.ll_h * self.triggerAutomaticallyRefreshPercent + scrollView.ll_insetBottom - self.ll_h) {
                 // 防止手松开时连续调用
                 let old = change?[NSKeyValueChangeKey.oldKey] as? CGPoint
                 let new = change?[NSKeyValueChangeKey.newKey] as? CGPoint
@@ -91,12 +89,12 @@ open class LLRefreshAutoFooter: LLRefreshFooter {
             return
         }
         if scrollView.panGestureRecognizer.state == .ended { //手松开
-            if (scrollView.contentInset.top + scrollView.ll_contentH <= scrollView.ll_h) {  // 不够一个屏幕
-                if (scrollView.contentOffset.y >= -scrollView.contentInset.top) { // 向上拽
+            if (scrollView.ll_insetTop + scrollView.ll_contentH <= scrollView.ll_h) {  // 不够一个屏幕
+                if (scrollView.ll_offsetY >= -scrollView.ll_insetTop) { // 向上拽
                     beginRefreshing()
                 }
             } else { // 超出一个屏幕
-                if (scrollView.ll_offsetY >= scrollView.ll_contentH + scrollView.contentInset.bottom - scrollView.ll_h) {
+                if (scrollView.ll_offsetY >= scrollView.ll_contentH + scrollView.ll_insetBottom - scrollView.ll_h) {
                     beginRefreshing()
                 }
             }
@@ -131,13 +129,9 @@ open class LLRefreshAutoFooter: LLRefreshFooter {
             super.isHidden = v
             if oldValue == false && v {
                 setState(.normal)
-                var content = _scrollView?.contentInset
-                content?.bottom -= ll_h
-                _scrollView?.contentInset = content!
+                _scrollView?.ll_insetBottom -= ll_h
             }else if oldValue && v == false {
-                var content = _scrollView?.contentInset
-                content?.bottom += ll_h
-                _scrollView?.contentInset = content!
+                _scrollView?.ll_insetBottom += ll_h
                 // 设置位置
                 ll_y = (_scrollView?.ll_contentH ?? 0)
             }

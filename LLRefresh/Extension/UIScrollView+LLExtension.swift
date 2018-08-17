@@ -100,6 +100,47 @@ extension UIScrollView {
             self.contentSize = contentSize
         }
     }
+    public var ll_insetTop: CGFloat {
+        get {
+            return self.contentInset.top
+        }
+        set(value) {
+            var contentInset = self.contentInset
+            contentInset.top = value
+            self.contentInset = contentInset
+        }
+    }
+    public var ll_insetBottom: CGFloat {
+        get {
+            return self.contentInset.bottom
+        }
+        set(value) {
+            var contentInset = self.contentInset
+            contentInset.bottom = value
+            self.contentInset = contentInset
+        }
+    }
+    public var ll_insetLeft: CGFloat {
+        get {
+            return self.contentInset.left
+        }
+        set(value) {
+            var contentInset = self.contentInset
+            contentInset.left = value
+            self.contentInset = contentInset
+        }
+    }
+    public var ll_insetRight: CGFloat {
+        get {
+            return self.contentInset.right
+        }
+        set(value) {
+            var contentInset = self.contentInset
+            contentInset.right = value
+            self.contentInset = contentInset
+        }
+    }
+    
     
     
 }

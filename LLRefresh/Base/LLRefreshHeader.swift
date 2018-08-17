@@ -88,8 +88,8 @@ open class LLRefreshHeader: LLBaseRefreshHeader {
             UserDefaults.standard.synchronize()
             // 恢复inset和offset
             UIView.animate(withDuration: LLConstant.AnimationDuration, animations: {
-                let top = (self._scrollView?.contentInset.top ?? 0) + self.insetTDelta
-                self._scrollView?.contentInset = UIEdgeInsetsMake(top, 0, 0, 0)
+                let top = (self._scrollView?.ll_insetTop ?? 0) + self.insetTDelta
+                self._scrollView?.ll_insetTop = top
             }, completion: { (finished) in
                 self._pullingPercent = 0.0
                 if let endRefreshingCompletionBlock = self.endRefreshingCompletionBlock {
@@ -100,7 +100,7 @@ open class LLRefreshHeader: LLBaseRefreshHeader {
             DispatchQueue.main.async(execute: {
                 UIView.animate(withDuration: LLConstant.AnimationDuration, animations: {
                     let top = (self._scrollViewOriginalInset?.top ?? 0) + self.ll_h
-                    self._scrollView?.contentInset = UIEdgeInsetsMake(top, 0, 0, 0)
+                    self._scrollView?.ll_insetTop = top
                     self._scrollView?.setContentOffset(CGPoint(x: 0, y: -top), animated: false)
                 }, completion: { (finished) in
                     self.executeRefreshingCallback()
@@ -128,7 +128,8 @@ open class LLRefreshHeader: LLBaseRefreshHeader {
             //1.2 下拉距离和content顶部距离使用小的那个
             let contentTopH:CGFloat = self.ll_h + (_scrollViewOriginalInset?.top ?? 0)
             insetT = insetT > contentTopH ? contentTopH : insetT;
-            self._scrollView?.contentInset = UIEdgeInsetsMake(insetT ?? 0, 0, 0, 0)
+            
+            self._scrollView?.ll_insetTop = insetT ?? 0
             
             self.insetTDelta = (_scrollViewOriginalInset?.top ?? 0) - (insetT ?? 0)
             return
